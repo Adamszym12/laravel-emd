@@ -32,22 +32,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="sidebar">
                 <!-- Sidebar user panel -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    @auth
                     <div class="image">
                         <img src="{{asset(Auth::user()->profile_picture)}}" class="img-fluid" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">{{ Auth::user()->name }} {{ Auth::user()->surname }}</a>
                     </div>
-                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();"> Logout </a>
+                    @endauth
                 </div>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
+                        @role('admin')
                         <li class="nav-item has-treeview {{ (request()->is('admin/*')) ? 'menu-open' : '' }}">
                             <a href="#" class="nav-link  {{ (request()->is('admin/*')) ? 'active' : '' }}">
                                 <i class="nav-icon fas fas fa-cogs"></i>
@@ -77,6 +75,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </li>
                             </ul>
                         </li>
+                        @endrole
                         <li class="nav-item">
                             <a href="{{url('employees')}}"
                                class="nav-link {{ (request()->is('employees')) ? 'active' : '' }}">
@@ -95,6 +94,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </p>
                             </a>
                         </li>
+                        <!-- logout -->
+                        <li class="nav-item">
+                            <a href="{{ route('logout') }}" class="nav-link" style="background-color: #e34b4d"
+                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class="nav-icon fas fa-power-off"></i>
+                                <p>
+                                    Logout
+                                </p>
+                                 </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </li>
+                        <!-- /.logout -->
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

@@ -28,10 +28,9 @@ class CreateUserController extends Controller
             'phone' => 'required',
             'profileImage' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
-
         $user = new User();
         //set role
-        //$user->assignRole('admin');
+        $user->assignRole('user');
         $user->fill([
             'name' => $request->get('name'),
             'surname' => $request->get('surname'),
