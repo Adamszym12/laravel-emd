@@ -48,7 +48,7 @@ class CreateUserController extends Controller
             // Make a image name based on user name and current timestamp
             $name = Str::slug($request->input('name')) . '_' . time();
             // Define folder path
-            $folder = '/uploads/avatars';
+            $folder = '/uploads/avatars/';
             // Make a file path where image will be stored [ folder path + file name + file extension]
             $filePath = $folder . $name . '.' . $image->getClientOriginalExtension();
             // Upload image

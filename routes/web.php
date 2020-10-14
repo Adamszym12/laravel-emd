@@ -16,13 +16,17 @@ use App\Http\Controllers\Admin\CreateUserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', function () {
+        return view('home');
+    });
+    Route::get('/admin/create/user', [CreateUserController::class, 'create']);
+    Route::post('/admin/create/user', [CreateUserController::class, 'store']);
 
-Route::get('/admin/create/user', [CreateUserController::class, 'create']);
-Route::post('/admin/create/user', [CreateUserController::class, 'store']);
+    Route::get('/admin/create/department', [CreateDepartmentController::class, 'create']);
+    Route::post('/admin/create/department', [CreateDepartmentController::class, 'store']);
 
-Route::get('/admin/create/department', [CreateDepartmentController::class, 'create']);
-Route::post('/admin/create/department', [CreateDepartmentController::class, 'store']);
+    Route::get('/employees', [EmployeesController::class, 'show']);
 
-Route::get('/employees', [EmployeesController::class, 'show' ]);
-
-Route::get('/departments', [DepartmentsController::class, 'show' ]);
+    Route::get('/departments', [DepartmentsController::class, 'show']);
+});
