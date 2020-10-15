@@ -65,11 +65,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </a>
                                 </li>
                                 <li class="nav-item">
+                                    <a href="{{url('admin/manage/users')}}"
+                                       class="nav-link {{ (request()->is('admin/manage/users')) ? 'active' : '' }}">
+                                        <i class="nav-icon fas fa-users-cog"></i>
+                                        <p>
+                                            Manage users
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="{{url('admin/create/department')}}"
                                        class="nav-link {{ (request()->is('admin/create/department')) ? 'active' : '' }}">
                                         <i class="nav-icon fas fa-plus-square"></i>
                                         <p>
                                             Create department
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{url('admin/manage/departments')}}"
+                                       class="nav-link {{ (request()->is('admin/manage/departments')) ? 'active' : '' }}">
+                                        <i class="nav-icon far fa-user-circle"></i>
+                                        <p>
+                                            Manage departments
                                         </p>
                                     </a>
                                 </li>

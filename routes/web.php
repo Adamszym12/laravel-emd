@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\ManageDepartmentsController;
+use App\Http\Controllers\Admin\ManageUsersController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CreateDepartmentController;
 use App\Http\Controllers\DepartmentsController;
@@ -28,5 +30,6 @@ Route::group(['middleware' => ['role:admin']], function () {
     Route::post('/admin/create/user', [CreateUserController::class, 'store']);
     Route::get('/admin/create/department', [CreateDepartmentController::class, 'create']);
     Route::post('/admin/create/department', [CreateDepartmentController::class, 'store']);
-
+    Route::get('/admin/manage/users', [ManageUsersController::class, 'show']);
+    Route::get('/admin/manage/departments', [ManageDepartmentsController::class, 'show']);
 });
