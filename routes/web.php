@@ -31,5 +31,9 @@ Route::group(['middleware' => ['role:admin']], function () {
     Route::get('/admin/create/department', [CreateDepartmentController::class, 'create']);
     Route::post('/admin/create/department', [CreateDepartmentController::class, 'store']);
     Route::get('/admin/manage/users', [ManageUsersController::class, 'show']);
+    Route::delete('/admin/manage/users', [ManageUsersController::class, 'delete']);
+    Route::post('/admin/manage/users', [ManageUsersController::class, 'update']);
     Route::get('/admin/manage/departments', [ManageDepartmentsController::class, 'show']);
+    Route::delete('/admin/manage/departments', [ManageDepartmentsController::class, 'delete']);
+    Route::post('/admin/manage/departments', [ManageDepartmentsController::class, 'update']);
 });

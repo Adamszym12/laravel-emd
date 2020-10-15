@@ -168,6 +168,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="container-fluid">
                     @yield('content')
                 </div><!-- /.container-fluid -->
+                <!-- modals -->
+                @yield('modals')
+                <!-- /.modals -->
             </div>
             <!-- /.content -->
         </div>
