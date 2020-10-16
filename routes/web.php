@@ -25,7 +25,7 @@ Route::group(['middleware' => ['role:admin|user']], function () {
     Route::get('/employees', [EmployeesController::class, 'show']);
     Route::get('/departments', [DepartmentsController::class, 'show']);
 });
-Route::group(['middleware' => ['role:admin']], function () {
+//Route::group(['middleware' => ['role:admin']], function () {
     Route::get('/admin/create/user', [CreateUserController::class, 'create']);
     Route::post('/admin/create/user', [CreateUserController::class, 'store']);
     Route::get('/admin/create/department', [CreateDepartmentController::class, 'create']);
@@ -36,4 +36,8 @@ Route::group(['middleware' => ['role:admin']], function () {
     Route::get('/admin/manage/departments', [ManageDepartmentsController::class, 'show']);
     Route::delete('/admin/manage/departments', [ManageDepartmentsController::class, 'delete']);
     Route::post('/admin/manage/departments', [ManageDepartmentsController::class, 'update']);
-});
+    Route::post('/admin/manage/departments/add/users', [ManageDepartmentsController::class, 'addUsersToDepartment']);
+    Route::get('/admin/manage/department/get/users', [ManageDepartmentsController::class, 'getUsersFromDepartment']);
+    Route::post('/admin/manage/user/add/departments', [ManageUsersController::class, 'addDepartmentsToUser']);
+    Route::get('/admin/manage/user/get/departments', [ManageUsersController::class, 'getDepartmentsFromUser']);
+//});

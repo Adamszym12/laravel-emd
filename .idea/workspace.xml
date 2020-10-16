@@ -1,19 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2226954e-98b3-4e6b-abf9-8f25d8e3e48c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/js/pages/manageDepartments.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/pages/manageUsers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/admin_1602873315.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/admin_1602876561.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/asdf_1602876594.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/asdfasdf_1602876588.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/asdfasdf_1602876600.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/asdfasdf_1602876603.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/aspoidfjkasf_1602874164.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/dfghdfgh_1602881574.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/dfghdfgh_1602881577.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/dfghdfgh_1602881584.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/dfghdfgh_1602881603.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/dfghdfgh_1602881612.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/dfghdfghjmbb_1602881595.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/dfghdfghndfghnm_1602881548.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/name2_1602842994.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/name2_1602843002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/name_1602843026.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/sdafgsdfg_1602881529.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/sdafgsdfg_1602881532.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/sdfg_1602843011.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/sdfgsdfg_1602874174.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/sdfgsdfg_1602874180.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/sdfgsdfg_1602874188.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/sdfgsdfg_1602881539.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/sdfgsdfgsdfg_1602874195.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/sdfgsdfgsdfg_1602874200.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/sdfgsdfgsdfg_1602874204.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/sdfgsdsdfgsdfg_1602881556.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/sdfgsdsdfgsdfg_1602881559.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/user1_1602842983.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/user1_1602876578.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CreateUserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CreateUserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ManageDepartmentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ManageDepartmentsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ManageUsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ManageUsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/pages/dashboard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/pages/dashboard2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/pages/dashboard3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Department.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Department.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_14_144518_create_departments_users_table.php.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_14_144518_create_department_user_table.php.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/pages/manageDepartments.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pages/manageDepartments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/pages/manageUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pages/manageUsers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/manageDepartments.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/manageDepartments.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/manageUsers.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/manageUsers.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/employees.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/employees.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -200,6 +235,7 @@
       <workItem from="1602698120249" duration="10945000" />
       <workItem from="1602755192000" duration="5364000" />
       <workItem from="1602773571706" duration="10451000" />
+      <workItem from="1602842565758" duration="35303000" />
     </task>
     <servers />
   </component>
@@ -214,17 +250,21 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="729" y="302" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1602701750805" />
-    <state x="729" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602784930315">
+    <state x="729" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602885466611">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="729" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1602784930315" />
-    <state x="622" y="273" width="737" height="568" key="NewPhpClassDialog" timestamp="1602756000129">
+    <state x="729" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1602885466611" />
+    <state x="622" y="273" width="737" height="568" key="NewPhpClassDialog" timestamp="1602874412942">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="622" y="273" width="737" height="568" key="NewPhpClassDialog/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1602756000129" />
-    <state x="660" y="252" key="run.anything.popup" timestamp="1602705261128">
+    <state x="622" y="273" width="737" height="568" key="NewPhpClassDialog/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1602874412942" />
+    <state x="660" y="252" key="run.anything.popup" timestamp="1602885462536">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="660" y="252" key="run.anything.popup/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1602705261128" />
+    <state x="660" y="252" key="run.anything.popup/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1602885462536" />
+    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1602868745693">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1602868745693" />
   </component>
 </project>

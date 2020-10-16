@@ -26,7 +26,8 @@
                         <td>{{$user->surname}}</td>
                         <td>{{$user->email}}</td>
                         <td>{{$user->description}}</td>
-                        <td></td>
+                        <td>@foreach($user->departments as $department){{$department->name}} @endforeach</td>
+
                     </tr>
                 @endforeach
                 </tbody>

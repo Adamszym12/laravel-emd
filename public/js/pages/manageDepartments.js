@@ -1,17 +1,18 @@
 $(document).ready(function() {
-    let table = $('#manageDepartmentsTable').DataTable({
+    let clickedDepartmentId;
+    let manageDepartmentsTable = $('#manageDepartmentsTable').DataTable({
         "paging": true,
         "lengthChange": true,
         "searching": true,
+        "select": false,
         "ordering": true,
         "info": true,
         "autoWidth": false,
-        "responsive": true,
         "columns": [
             { "width": "0%" },
             { "width": "30%" },
-            { "width": "55%" },
-            { "width": "10%" },
+            { "width": "57%" },
+            { "width": "13%" },
         ],
         "columnDefs": [
             {
@@ -22,6 +23,7 @@ $(document).ready(function() {
                 "defaultContent":
                     '<div class="row  justify-content-around">'
                     + '<button class="btn" name="edit" type="button"><i class="fas fa-edit"></i></button>'
+                    + '<button class="btn" name="addUser" type="button"><i class="fas fa-user-plus"></i></button>'
                     + '<button class="btn" name="delete"  type="button"><i class="fas fa-trash"></button>'
                     + '</div>'
             },
@@ -32,21 +34,85 @@ $(document).ready(function() {
         ]
     });
 
+    let addUsersToDepartmentTable = $('#addUsersToDepartmentTable').DataTable({
+        "paging": true,
+        "lengthChange": true,
+        "searching": true,
+        "ordering": true,
+        "info": true,
+        "rowId": "Id",
+        "autoWidth": false,
+        "columns": [
+        ],
+        "columnDefs": [
+            {
+                "className": 'select-checkbox',
+                "orderable": false,
+                "targets":[6]
+            },
+            {
+                "targets": [ 0 ],
+                "visible": false
+            }
+        ],
+        select: {
+            style:    'multi',
+            selector: 'td:nth-child(6)'
+        },
+        order: [[ 1, 'asc' ]]
+
+    });
+
     let tbody =  $('#manageDepartmentsTable tbody');
-    // edit department
+
+    // Edit department
     tbody.on( 'click', 'button[name=edit]', function () {
-        let rowData = table.row( $(this).parents('tr') ).data()
-        $('#hiddenModalEditDepartmentInput').val(rowData[0]);
+        let rowData = manageDepartmentsTable.row( $(this).parents('tr') ).data()
+        clickedDepartmentId.val(rowData[0]);
         $('#nameInput').val(rowData[1]);
         $('#descriptionInput').val(rowData[2]);
         $('#modalEditDepartment').modal('show');
 
     } );
-    // delete department
+
+    // Delete department
     tbody.on( 'click', 'button[name=delete]', function () {
-        let DepartmentId = table.row( $(this).parents('tr') ).data()[0]
+        let DepartmentId = manageDepartmentsTable.row( $(this).parents('tr') ).data()[0]
         $('#hiddenModalDeleteDepartmentInput').val(DepartmentId);
         $('#modalDeleteDepartment').modal('show');
     } );
+
+    // Add user
+    tbody.on( 'click', 'button[name=addUser]', function () {
+        clickedDepartmentId = manageDepartmentsTable.row( $(this).parents('tr') ).data()[0]
+        addUsersToDepartmentTable.rows().deselect();
+        $.get( "/admin/manage/department/get/users",{departmentId: clickedDepartmentId}, function( data ) {
+            $(data[0]).each(function (index, value) {
+                var row = addUsersToDepartmentTable.row('#'+value).select();
+
+            })
+        });
+        $('#modalAddUserToDepartment').modal('show');
+    });
+
+    // Add users to department
+    $('#submitAddUsersToDepartmentButton').on('click', function(e){
+        let selectedRows = addUsersToDepartmentTable.rows({ selected: true }).data();
+        let deselectedRows = addUsersToDepartmentTable.rows({ selected: false }).data();
+        let data = {};
+        let selectedIds = [];
+        let deselectedIds = [];
+        selectedRows.each(function (value, index){
+            selectedIds.push(value[0]);
+        });
+        deselectedRows.each(function (value, index){
+            deselectedIds.push(value[0]);
+        });
+        data.selectedIds = selectedIds;
+        data.deselectedIds = deselectedIds;
+        data.departmentId = clickedDepartmentId;
+        $('#hiddenAddUsersToDepartmentInput').val(JSON.stringify(data))
+        $('#addUsersToDepartmentForm').submit();
+    });
 });
 

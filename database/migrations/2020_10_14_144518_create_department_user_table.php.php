@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDepartmentsUsersTable extends Migration
+class CreateDepartmentUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateDepartmentsUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('departments_users', function (Blueprint $table) {
-            $table->integer('user_id');
-            $table->integer('department_id');
+        Schema::create('department_user', function (Blueprint $table) {
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('department_id')->constrained();
             $table->timestamps();
-            $table->primary('user_id','department_id');
         });
     }
 
@@ -28,6 +27,6 @@ class CreateDepartmentsUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('departments_users');
+        Schema::dropIfExists('department_user');
     }
 }
