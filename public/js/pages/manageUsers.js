@@ -14,8 +14,8 @@ $(document).ready(function() {
             { "width": "15%" },
             { "width": "15%" },
             { "width": "30%" },
-            { "width": "15%" },
-            { "width": "10%" },
+            { "width": "12%" },
+            { "width": "13%" },
         ],
         "columnDefs": [
             {
@@ -85,7 +85,7 @@ $(document).ready(function() {
         manageUserDepartments.rows().deselect();
         $.get( "/admin/manage/user/get/departments",{userId: clickedUserId}, function( data ) {
             $(data[0]).each(function (index, value) {
-                var row = manageUserDepartments.row('#'+value).select();
+                let row = manageUserDepartments.row('#'+value).select();
 
             })
         });

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ManageDepartmentsController;
 use App\Http\Controllers\Admin\ManageUsersController;
+use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CreateDepartmentController;
 use App\Http\Controllers\DepartmentsController;
@@ -24,6 +25,7 @@ Route::group(['middleware' => ['role:admin|user']], function () {
     });
     Route::get('/employees', [EmployeesController::class, 'show']);
     Route::get('/departments', [DepartmentsController::class, 'show']);
+    Route::get('/profile/{id}', [UserProfileController::class, 'show']);
 });
 //Route::group(['middleware' => ['role:admin']], function () {
     Route::get('/admin/create/user', [CreateUserController::class, 'create']);

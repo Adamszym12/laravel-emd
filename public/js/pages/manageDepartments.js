@@ -88,7 +88,7 @@ $(document).ready(function() {
         addUsersToDepartmentTable.rows().deselect();
         $.get( "/admin/manage/department/get/users",{departmentId: clickedDepartmentId}, function( data ) {
             $(data[0]).each(function (index, value) {
-                var row = addUsersToDepartmentTable.row('#'+value).select();
+                let row = addUsersToDepartmentTable.row('#'+value).select();
 
             })
         });
