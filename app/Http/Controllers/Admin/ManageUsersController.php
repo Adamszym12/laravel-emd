@@ -11,6 +11,12 @@ use Illuminate\Http\Request;
 
 class ManageUsersController extends Controller
 {
+    /**
+     * Display users manager.
+     *
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function show()
     {
         $departments = Department::all();
@@ -21,15 +27,27 @@ class ManageUsersController extends Controller
         ]));
     }
 
-    public function delete(Request $request)
+    /**
+     * Remove user
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function delete($id)
     {
-        User::destroy($request->get('id'));
+        $user = User::findOrFail($id);
+        $user->departments()->detach();
+        User::destroy($id);
         return redirect()->back()->with(['status' => 'User deleted successfully.']);
     }
 
-    public function update(Request $request)
+    /**
+     * Show the form for editing user.
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function edit(Request $request, $id)
     {
-        $user = User::findOrFail($request->get('id'));
+        $user = User::findOrFail($id);
         $user->name = $request->get('name');
         $user->surname = $request->get('surname');
         $user->email = $request->get('email');
@@ -39,6 +57,12 @@ class ManageUsersController extends Controller
         return redirect()->back()->with(['status' => 'User updated successfully.']);
     }
 
+    /**
+     * Attach departments to users
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function addDepartmentsToUser(Request $request)
     {
         $data = $request->all();
@@ -49,9 +73,25 @@ class ManageUsersController extends Controller
         return redirect()->back()->with(['status' => 'Users added successfully.']);
     }
 
+    /**
+     * Attach get departments from  user
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function getDepartmentsFromUser(Request $request)
     {
         $departments = (User::findOrFail($request->get('userId'))->departments)->pluck('id');
         return response()->json([$departments]);
+    }
+
+    /**
+     * Display all users list.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showList(){
+        $users = User::all();
+        return view('userList' , compact('users'));
     }
 }

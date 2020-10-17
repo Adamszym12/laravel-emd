@@ -14,11 +14,22 @@ class CreateUserController extends Controller
 {
     use UploadImageTrait;
 
+    /**
+     * Show the form for creating a new user.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         return view('admin.createUser');
     }
 
+    /**
+     * Store a newly created user.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request)
     {
         $request->validate([
@@ -31,6 +42,8 @@ class CreateUserController extends Controller
         $user = new User();
         //set role
         $user->assignRole('user');
+
+        //fill user
         $user->fill([
             'name' => $request->get('name'),
             'surname' => $request->get('surname'),

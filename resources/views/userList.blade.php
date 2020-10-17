@@ -1,33 +1,40 @@
 @extends('layouts.base')
 
-@section('pageName', 'Departments')
-@section('title', 'departments')
+@section('pageName', '')
+@section('title', 'Users list')
 @section('content')
     <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">DataTable with default features</h3>
-        </div>
         <!-- /.card-header -->
         <div class="card-body">
             <table id="employeesTable" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                     <th>Name</th>
+                    <th>Surname</th>
+                    <th>E-mail</th>
                     <th>Description</th>
+                    <th>Departments</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach ($departments as $department)
+                @foreach ($users as $user)
                     <tr>
-                        <td>{{$department->name}}</td>
-                        <td>{{$department->description}}</td>
+                        <td>{{$user->name}}</td>
+                        <td>{{$user->surname}}</td>
+                        <td>{{$user->email}}</td>
+                        <td>{{$user->description}}</td>
+                        <td>@foreach($user->departments as $department){{$department->name}} @endforeach</td>
+
                     </tr>
                 @endforeach
                 </tbody>
                 <tfoot>
                 <tr>
                     <th>Name</th>
+                    <th>Surname</th>
+                    <th>E-mail</th>
                     <th>Description</th>
+                    <th>Departments</th>
                 </tr>
                 </tfoot>
             </table>

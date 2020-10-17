@@ -1,12 +1,9 @@
 @extends('layouts.base')
 
 @section('pageName', '')
-@section('title', 'departments')
+@section('title', 'Manage users')
 @section('content')
     <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">DataTable with default features</h3>
-        </div>
         <!-- /.card-header -->
         <div class="card-body">
             <table id="manageUsersTable" class="table table-bordered table-striped">
@@ -64,7 +61,7 @@
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
-                    <form method="POST">
+                    <form id="deleteUserForm" method="POST">
                         @csrf
                         @method('DELETE')
                         <input type="hidden" name="id" id="hiddenModalDeleteUserInput">
@@ -87,10 +84,9 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form method="POST">
+                <form id="editUserForm" method="POST">
                     @csrf
                     <div class="modal-body">
-                        <input type="hidden" name="id" id="hiddenModalEditUserInput">
                         <div class="form-group">
                             <label for="nameInput">Name</label>
                             <input name="name" type="text" class="form-control" id="nameInput">

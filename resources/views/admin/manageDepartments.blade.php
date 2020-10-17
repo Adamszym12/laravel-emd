@@ -1,12 +1,9 @@
 @extends('layouts.base')
 
 @section('pageName', '')
-@section('title', 'departments')
+@section('title', 'Manage departments')
 @section('content')
     <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">DataTable with default features</h3>
-        </div>
         <!-- /.card-header -->
         <div class="card-body">
             <table id="manageDepartmentsTable" class="table table-bordered table-striped">
@@ -78,10 +75,9 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form method="POST">
+                <form id="editDepartmentForm" method="POST">
                     @csrf
                     <div class="modal-body">
-                        <input type="hidden" name="id" id="hiddenModalEditDepartmentInput">
                         <div class="form-group">
                             <label for="nameInput">Name</label>
                             <input name="name" type="text" class="form-control" id="nameInput">

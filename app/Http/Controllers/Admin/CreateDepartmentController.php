@@ -10,10 +10,22 @@ use Illuminate\Http\Request;
 
 class CreateDepartmentController extends Controller
 {
+    /**
+     * Show the form for creating a new department.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         return view('admin.createDepartment');
     }
+
+    /**
+     * Store a new department.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
         $request->validate([

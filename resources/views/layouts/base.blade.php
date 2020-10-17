@@ -65,15 +65,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{url('admin/manage/users')}}"
-                                       class="nav-link {{ (request()->is('admin/manage/users')) ? 'active' : '' }}">
-                                        <i class="nav-icon fas fa-users-cog"></i>
-                                        <p>
-                                            Manage users
-                                        </p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
                                     <a href="{{url('admin/create/department')}}"
                                        class="nav-link {{ (request()->is('admin/create/department')) ? 'active' : '' }}">
                                         <i class="nav-icon fas fa-plus-square"></i>
@@ -91,25 +82,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="{{url('admin/manage/users')}}"
+                                       class="nav-link {{ (request()->is('admin/manage/users')) ? 'active' : '' }}">
+                                        <i class="nav-icon fas fa-users-cog"></i>
+                                        <p>
+                                            Manage users
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{url('admin/list/users')}}"
+                                       class="nav-link {{ (request()->is('admin/list/users')) ? 'active' : '' }}">
+                                        <i class="nav-icon fas fa-users"></i>
+                                        <p>
+                                            Users list
+                                        </p>
+                                    </a>
+                                </li>
                             </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{url('employees')}}"
-                               class="nav-link {{ (request()->is('employees')) ? 'active' : '' }}">
-                                <i class="nav-icon fas fa-users"></i>
-                                <p>
-                                    Employees
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{url('departments')}}"
-                               class="nav-link {{ (request()->is('departments')) ? 'active' : '' }}">
-                                <i class="nav-icon fas fa-building"></i>
-                                <p>
-                                    Departments
-                                </p>
-                            </a>
                         </li>
                         @endrole
                         @role('user')
@@ -168,8 +159,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Starter Page</li>
+                                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                @if(Request::path()!='/')
+                                    <li class="breadcrumb-item"><a href="/{{Request::path()}}">{{basename(Request::path())}}</a></li>
+                                    @endif
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->

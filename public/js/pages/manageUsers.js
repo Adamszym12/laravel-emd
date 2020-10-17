@@ -67,10 +67,11 @@ $(document).ready(function() {
     });
 
     let tbody =  $('#manageUsersTable tbody');
+
     // edit user
     tbody.on( 'click', 'button[name=edit]', function () {
         let rowData = table.row( $(this).parents('tr') ).data()
-        $('#hiddenModalEditUserInput').val(rowData[0]);
+        $('#editUserForm').attr('action', '/admin/manage/users/'+rowData[0])
         $('#nameInput').val(rowData[1]);
         $('#surnameInput').val(rowData[2]);
         $('#emailInput').val(rowData[3]);
@@ -95,7 +96,7 @@ $(document).ready(function() {
     // delete user
     tbody.on( 'click', 'button[name=delete]', function () {
         let UserId = table.row( $(this).parents('tr') ).data()[0]
-        $('#hiddenModalDeleteUserInput').val(UserId);
+        $('#deleteUserForm').attr('action', '/admin/manage/users/'+UserId)
         $('#modalDeleteUser').modal('show');
     } );
 

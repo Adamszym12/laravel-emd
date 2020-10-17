@@ -12,6 +12,11 @@ class UserProfileController extends Controller
 {
     use UploadImageTrait;
 
+    /**
+     * Display a user profile.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function show(Request $request, $id)
     {
         if (auth()->user()->id != $id) {
@@ -21,7 +26,14 @@ class UserProfileController extends Controller
         return view('profile', compact('user'));
     }
 
-    public function update(Request $request, $id)
+    /**
+     * Show the form for editing the user.
+     *
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function edit(Request $request, $id)
     {
         if (auth()->user()->id != $id) {
             abort(403);

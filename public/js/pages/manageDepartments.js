@@ -68,7 +68,7 @@ $(document).ready(function() {
     // Edit department
     tbody.on( 'click', 'button[name=edit]', function () {
         let rowData = manageDepartmentsTable.row( $(this).parents('tr') ).data()
-        clickedDepartmentId.val(rowData[0]);
+        $('#editDepartmentForm').attr('action', '/admin/manage/departments/'+rowData[0])
         $('#nameInput').val(rowData[1]);
         $('#descriptionInput').val(rowData[2]);
         $('#modalEditDepartment').modal('show');
