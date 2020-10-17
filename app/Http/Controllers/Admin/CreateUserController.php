@@ -35,7 +35,7 @@ class CreateUserController extends Controller
         $request->validate([
             'name' => 'required',
             'surname' => 'required',
-            'email' => 'required',
+            'email' => 'required|unique:users,email',
             'phone' => 'required',
             'profileImage' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
@@ -52,6 +52,8 @@ class CreateUserController extends Controller
             'description' => $request->get('description'),
             'password' => Hash::make($request->get('password')),
         ]);
+
+
 
         //add profile image
         if ($request->has('profileImage')) {

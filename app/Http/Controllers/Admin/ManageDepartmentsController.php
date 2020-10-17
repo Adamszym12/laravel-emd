@@ -69,8 +69,7 @@ class ManageDepartmentsController extends Controller
         $data = $request->all();
         $decoded = json_decode($data['addUsersDataInput'], true);
         $department = Department::findOrFail($decoded['departmentId']);
-        $department->users()->attach($decoded['selectedIds']);
-        $department->users()->detach($decoded['deselectedIds']);
+        $department->users()->sync($decoded['selectedIds']);
         return redirect()->back()->with(['status' => 'Users added successfully.']);
     }
 

@@ -3,11 +3,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-
 use App\Http\Controllers\Controller;
 use App\Models\Department;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ManageUsersController extends Controller
 {
@@ -35,6 +35,8 @@ class ManageUsersController extends Controller
     public function delete($id)
     {
         $user = User::findOrFail($id);
+        //delete image
+        Storage::disk('public')->delete($user->profile_picture);
         $user->departments()->detach();
         User::destroy($id);
         return redirect()->back()->with(['status' => 'User deleted successfully.']);
@@ -66,10 +68,10 @@ class ManageUsersController extends Controller
     public function addDepartmentsToUser(Request $request)
     {
         $data = $request->all();
+        //dd($data);
         $decoded = json_decode($data['addDepartmentsDataInput'], true);
         $department = User::findOrFail($decoded['userId']);
-        $department->departments()->attach($decoded['selectedIds']);
-        $department->departments()->detach($decoded['deselectedIds']);
+        $department->departments()->sync($decoded['selectedIds']);
         return redirect()->back()->with(['status' => 'Users added successfully.']);
     }
 
@@ -90,8 +92,9 @@ class ManageUsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showList(){
+    public function showList()
+    {
         $users = User::all();
-        return view('userList' , compact('users'));
+        return view('userList', compact('users'));
     }
 }

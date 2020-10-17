@@ -101,15 +101,10 @@ $(document).ready(function() {
         let deselectedRows = addUsersToDepartmentTable.rows({ selected: false }).data();
         let data = {};
         let selectedIds = [];
-        let deselectedIds = [];
         selectedRows.each(function (value, index){
             selectedIds.push(value[0]);
         });
-        deselectedRows.each(function (value, index){
-            deselectedIds.push(value[0]);
-        });
         data.selectedIds = selectedIds;
-        data.deselectedIds = deselectedIds;
         data.departmentId = clickedDepartmentId;
         $('#hiddenAddUsersToDepartmentInput').val(JSON.stringify(data))
         $('#addUsersToDepartmentForm').submit();
