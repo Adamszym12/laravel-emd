@@ -34,7 +34,7 @@ $(document).ready(function() {
         ]
     });
 
-    let addUsersToDepartmentTable = $('#addUsersToDepartmentTable').DataTable({
+    let addUsersToDepartmentTable = $('#addDepartmentsToUserTable').DataTable({
         "paging": true,
         "lengthChange": true,
         "searching": true,

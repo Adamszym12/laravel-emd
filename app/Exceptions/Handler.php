@@ -2,7 +2,9 @@
 
 namespace App\Exceptions;
 
+
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Throwable;
 
 class Handler extends ExceptionHandler
 {
@@ -33,5 +35,16 @@ class Handler extends ExceptionHandler
     public function register()
     {
         //
+    }
+
+    /**
+     * Redirect to login anonymous
+     */
+    public function render($request, Throwable $e)
+    {
+        if ($e->getMessage() == "User is not logged in.") {
+            return redirect('/login')->with('status', 'Profile updated!'); // this redirect on 403 exception
+        }
+        return parent::render($request, $e); // all the other exceptions
     }
 }

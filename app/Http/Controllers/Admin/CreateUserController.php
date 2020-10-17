@@ -9,7 +9,6 @@ use App\Traits\UploadImageTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-use Spatie\Permission\Models\Role;
 
 class CreateUserController extends Controller
 {

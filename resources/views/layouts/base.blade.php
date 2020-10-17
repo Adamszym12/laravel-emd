@@ -22,7 +22,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
+            <a href="#" class="brand-link">
                 <img src="{{asset('/img/AdminLTELogo.png')}}" alt="AdminLTE Logo"
                      class="brand-image img-circle elevation-3"
                      style="opacity: .8">
@@ -37,7 +37,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <img src="{{asset(Auth::user()->profile_picture)}}" class="img-fluid" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">{{ Auth::user()->name }} {{ Auth::user()->surname }}</a>
+                        <a href="/profile/{{Auth::user()->id}}" class="d-block">{{ Auth::user()->name }} {{ Auth::user()->surname }}</a>
                     </div>
                     @endauth
                 </div>
@@ -93,7 +93,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </li>
                             </ul>
                         </li>
-                        @endrole
                         <li class="nav-item">
                             <a href="{{url('employees')}}"
                                class="nav-link {{ (request()->is('employees')) ? 'active' : '' }}">
@@ -112,6 +111,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </p>
                             </a>
                         </li>
+                        @endrole
+                        @role('user')
+                        @foreach(Auth::user()->departments as $department)
+                            <li class="nav-item">
+                                <a href="{{url('department/'.$department->id)}}"
+                                   class="nav-link {{ (request()->is('department/'.$department->id)) ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>
+                                        {{$department->name}}
+                                    </p>
+                                </a>
+                            </li>
+                        @endforeach
+                        @endrole
                         <!-- logout -->
                         <li class="nav-item">
                             <a href="{{ route('logout') }}" class="nav-link" style="background-color: #e34b4d"
@@ -190,7 +203,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <footer class="main-footer">
             <!-- To the right -->
             <div class="float-right d-none d-sm-inline">
-                Anything you want
+               Made by Adam Szymański
             </div>
             <!-- Default to the left -->
             <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights

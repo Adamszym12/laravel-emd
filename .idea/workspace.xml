@@ -5,11 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2226954e-98b3-4e6b-abf9-8f25d8e3e48c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/UserProfileController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/DepartmentController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/admin_1602933204.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/admin_1602933215.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/user_1602934829.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/avatars/user_1602934943.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/department.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CreateUserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CreateUserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/pages/manageDepartments.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pages/manageDepartments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/pages/manageUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pages/manageUsers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/createUser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/createUser.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,21 +172,21 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app" />
-      <recent name="$PROJECT_DIR$/resources/views" />
-      <recent name="$PROJECT_DIR$/resources/layouts" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/js" />
       <recent name="$PROJECT_DIR$/resources/views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views" />
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/resources/layouts" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers" />
     </key>
   </component>
   <component name="RunManager">
@@ -196,7 +207,9 @@
       <workItem from="1602698120249" duration="10945000" />
       <workItem from="1602755192000" duration="5364000" />
       <workItem from="1602773571706" duration="10451000" />
-      <workItem from="1602842565758" duration="36001000" />
+      <workItem from="1602842565758" duration="36125000" />
+      <workItem from="1602931705811" duration="6629000" />
+      <workItem from="1602944165233" duration="1847000" />
     </task>
     <servers />
   </component>
@@ -215,14 +228,14 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="729" y="302" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1602701750805" />
-    <state x="729" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602885466611">
+    <state x="729" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602945496907">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="729" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1602885466611" />
-    <state x="622" y="273" width="737" height="568" key="NewPhpClassDialog" timestamp="1602888148163">
+    <state x="729" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1602945496907" />
+    <state x="622" y="273" width="737" height="568" key="NewPhpClassDialog" timestamp="1602938429290">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="622" y="273" width="737" height="568" key="NewPhpClassDialog/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1602888148163" />
+    <state x="622" y="273" width="737" height="568" key="NewPhpClassDialog/72.27.1848.1053/1920.0.1920.1080@72.27.1848.1053" timestamp="1602938429290" />
     <state x="660" y="252" key="run.anything.popup" timestamp="1602885462536">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
