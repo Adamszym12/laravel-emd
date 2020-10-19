@@ -27,7 +27,13 @@
                         <td>{{$user->email}}</td>
                         <td>{{$user->description}}</td>
                         <td>{{$user->phone}}</td>
-                        <td></td>
+                        <td>
+                            <div class="row  justify-content-around">
+                                <button class="btn" value="{{$user->id}}" name="edit" type="button"><i class="fas fa-edit"></i></button>
+                                <button class="btn" value="{{$user->id}}" name="addUser" type="button"><i class="fas fa-user-plus"></i></button>
+                                <button class="btn" value="{{$user->id}}" name="delete" type="button"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
@@ -61,7 +67,7 @@
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
-                    <form id="deleteUserForm" method="POST">
+                    <form action="{{route('users.destroy', '')}}" id="deleteUserForm" method="POST">
                         @csrf
                         @method('DELETE')
                         <input type="hidden" name="id" id="hiddenModalDeleteUserInput">

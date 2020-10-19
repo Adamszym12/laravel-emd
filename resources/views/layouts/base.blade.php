@@ -22,7 +22,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="/" class="brand-link">
+            <a href="{{route('users.show', Auth::user()->id )}}" class="brand-link">
                 <img src="{{asset('/img/AdminLTELogo.png')}}" alt="AdminLTE Logo"
                      class="brand-image img-circle elevation-3"
                      style="opacity: .8">
@@ -56,7 +56,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{url('admin/create/user')}}"
+                                    <a href="{{route('users.create')}}"
                                        class="nav-link {{ (request()->is('admin/create/user')) ? 'active' : '' }}">
                                         <i class="nav-icon fas fa-user-plus"></i>
                                         <p>
@@ -65,7 +65,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{url('admin/create/department')}}"
+                                    <a href="{{route('departments.create')}}"
                                        class="nav-link {{ (request()->is('admin/create/department')) ? 'active' : '' }}">
                                         <i class="nav-icon fas fa-plus-square"></i>
                                         <p>
@@ -74,7 +74,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{url('admin/manage/departments')}}"
+                                    <a href="{{route('departments.index')}}"
                                        class="nav-link {{ (request()->is('admin/manage/departments')) ? 'active' : '' }}">
                                         <i class="nav-icon far fa-user-circle"></i>
                                         <p>
@@ -83,20 +83,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{url('admin/manage/users')}}"
+                                    <a href="{{route('users.index')}}"
                                        class="nav-link {{ (request()->is('admin/manage/users')) ? 'active' : '' }}">
                                         <i class="nav-icon fas fa-users-cog"></i>
                                         <p>
                                             Manage users
-                                        </p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{url('admin/list/users')}}"
-                                       class="nav-link {{ (request()->is('admin/list/users')) ? 'active' : '' }}">
-                                        <i class="nav-icon fas fa-users"></i>
-                                        <p>
-                                            Users list
                                         </p>
                                     </a>
                                 </li>

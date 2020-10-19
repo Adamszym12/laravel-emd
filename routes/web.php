@@ -3,6 +3,8 @@
 use App\Http\Controllers\Admin\ManageDepartmentsController;
 use App\Http\Controllers\Admin\ManageUsersController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\DepartmentController2;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CreateDepartmentController;
@@ -19,14 +21,29 @@ use App\Http\Controllers\Admin\CreateUserController;
 |
 */
 Route::group(['middleware' => ['role:admin|user']], function () {
+    Route::get('/profile/{user}', [UserController::class, 'show'])->name('users.show');
+    /*
     Route::get('/', function () {
         return view('home');
     });
-    Route::get('/department/{id}', [DepartmentController::class, 'show']);
+    Route::get('/department/{id}', [DepartmentController2::class, 'show']);
     Route::get('/profile/{id}', [UserProfileController::class, 'show']);
     Route::post('/profile/{id}', [UserProfileController::class, 'edit']);
+    */
 });
-Route::group(['middleware' => ['role:admin']], function () {
+//Route::group(['middleware' => ['role:admin']], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {
+    //user
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+    Route::post('/users', [UserController::class, 'store'])->name('users.store');
+    Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+    //department
+    Route::get('/departments', [DepartmentController::class, 'index'])->name('departments.index');
+    Route::get('/departments/create', [DepartmentController::class, 'create'])->name('departments.create');
+    Route::post('departments', [DepartmentController::class, 'store'])->name('departments.store');
+    Route::delete('departments/{department}', [DepartmentController::class, 'destroy'])->name('departments.destroy');
+    /*
     // Create user
     Route::get('/admin/create/user', [CreateUserController::class, 'create']);
     Route::post('/admin/create/user', [CreateUserController::class, 'store']);
@@ -46,4 +63,5 @@ Route::group(['middleware' => ['role:admin']], function () {
     Route::post('/admin/manage/departments/{id}', [ManageDepartmentsController::class, 'edit']);
     Route::post('/admin/manage/departments/add/users', [ManageDepartmentsController::class, 'addUsersToDepartment']);
     Route::get('/admin/manage/department/get/users', [ManageDepartmentsController::class, 'getUsersFromDepartment']);
+    */
 });

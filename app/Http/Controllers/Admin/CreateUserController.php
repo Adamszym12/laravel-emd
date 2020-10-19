@@ -30,50 +30,7 @@ class CreateUserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required',
-            'surname' => 'required',
-            'email' => 'required|unique:users,email',
-            'phone' => 'required',
-            'profileImage' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
-        ]);
-        $user = new User();
-        //set role
-        $user->assignRole('user');
+    public function store(Request $request){
 
-        //fill user
-        $user->fill([
-            'name' => $request->get('name'),
-            'surname' => $request->get('surname'),
-            'email' => $request->get('email'),
-            'phone' => $request->get('surname'),
-            'description' => $request->get('description'),
-            'password' => Hash::make($request->get('password')),
-        ]);
-
-
-
-        //add profile image
-        if ($request->has('profileImage')) {
-            // Get image file
-            $image = $request->file('profileImage');
-            // Make a image name based on user name and current timestamp
-            $name = Str::slug($request->input('name')) . '_' . time();
-            // Define folder path
-            $folder = '/uploads/avatars/';
-            // Make a file path where image will be stored [ folder path + file name + file extension]
-            $filePath = $folder . $name . '.' . $image->getClientOriginalExtension();
-            // Upload image
-            $this->uploadImage($image, $folder, 'public', $name);
-            // Set user profile image path in database to filePath
-            $user->profile_picture = $filePath;
-        }
-
-        // Persist user record to database
-        $user->save();
-
-        return redirect()->back()->with(['status' => 'User created successfully.']);
     }
 }

@@ -11,7 +11,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="{{url('admin/create/user')}}" METHOD="POST" role="form" enctype="multipart/form-data">
+                <form action="{{route('users.store')}}" METHOD="POST" role="form" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
