@@ -50,12 +50,12 @@ class DepartmentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param Department $department
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function show($id)
+    public function show(Department $department)
     {
-        //
+        return view('department', compact('department'));
     }
 
     /**
