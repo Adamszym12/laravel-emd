@@ -182,7 +182,6 @@
                 </div>
                 <form method="post">
                     <meta name="csrf-token" content="{{ csrf_token() }}">
-
                     @csrf
                     <input name="addDepartmentsDataInput" id="hiddenAddDepartmentsToUserInput" type="hidden">
                     <div class="modal-footer justify-content-between">

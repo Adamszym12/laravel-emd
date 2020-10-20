@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\DepartmentController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\Ajax\UserController as AjaxUserController;
+use App\Http\Controllers\Admin\Ajax\DepartmentController as AjaxDepartmentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,6 +45,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::get('/users/{user}/departments', [AjaxUserController::class, 'getDepartmentsFromUser'])->name('users.departments.get');
     Route::post('/users/{user}/departments', [AjaxUserController::class, 'addDepartmentsToUser'])->name('users.departments.set');
     //Ajax department
+    Route::get('/departments/{department}/users', [AjaxDepartmentController::class, 'getUsersFromDepartment'])->name('departments.users.get');
+    Route::post('/departments/{department}/users', [AjaxDepartmentController::class, 'addUsersToDepartment'])->name('departments.users.set');
     /*
     // Create user
     Route::get('/admin/create/user', [CreateUserController::class, 'create']);

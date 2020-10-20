@@ -86,7 +86,7 @@ $(document).ready(function () {
         $('#modalDeleteUser').modal('show');
     });
 
-    // Add user onclick button
+    // Add department  onclick button
     tbody.on('click', 'button[name=addUser]', function () {
         let UserId = this.value;
         $('#hiddenAddDepartmentsToUserInput').val(UserId);
@@ -100,7 +100,7 @@ $(document).ready(function () {
         $('#modalAddUserToDepartment').modal('show');
     });
 
-    // Add users to department
+    // Add department to users
     $('#submitAddDepartmentsToUser').on('click', function (e) {
         let userId = $('#hiddenAddDepartmentsToUserInput').val();
         let selectedRows = manageUserDepartments.rows({selected: true}).data();

@@ -21,7 +21,16 @@
                         <td>{{$department->id}}</td>
                         <td>{{$department->name}}</td>
                         <td>{{$department->description}}</td>
-                        <td></td>
+                        <td>
+                            <div class="row  justify-content-around">
+                                <button class="btn" value="{{$department->id}}" name="edit" type="button"><i
+                                        class="fas fa-edit"></i></button>
+                                <button class="btn" value="{{$department->id}}" name="addUser" type="button"><i
+                                        class="fas fa-user-plus"></i></button>
+                                <button class="btn" value="{{$department->id}}" name="delete" type="button"><i
+                                        class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
@@ -52,10 +61,11 @@
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
-                    <form method="POST">
+                    <form id="deleteDepartmentForm" action="" method="POST">
                         @csrf
                         @method('DELETE')
-                        <input type="hidden" name="id" id="hiddenModalDeleteDepartmentInput">
+                        <input type="hidden" value="{{route('departments.destroy', '')}}" name="id"
+                               id="hiddenDepartmentDeleteActionInput">
                         <button type="submit" class="btn btn-outline-light">Delete</button>
                     </form>
                 </div>
@@ -75,8 +85,11 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form id="editDepartmentForm" method="POST">
+                <form id="updateDepartmentForm" method="POST">
                     @csrf
+                    @method('PUT')
+                    <input value="{{route('departments.update', '')}}" type="hidden"
+                           id="hiddenDepartmentUpdateActionInput">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="nameInput">Name</label>
@@ -110,40 +123,42 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                        <table id="addDepartmentsToUserTable" class="table table-striped">
-                            <thead>
-                            <tr>
-                                <th>Id</th>
-                                <th>Name</th>
-                                <th>Surname</th>
-                                <th>email</th>
-                                <th>description</th>
-                                <th>phone</th>
-                                <th></th>
+                    <table id="manageDepartmentUsers" class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>email</th>
+                            <th>description</th>
+                            <th>phone</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach ($users as $user)
+                            <tr id="{{$user->id}}">
+                                <td>{{$user->id}}</td>
+                                <td>{{$user->name}}</td>
+                                <td>{{$user->surname}}</td>
+                                <td>{{$user->email}}</td>
+                                <td>{{$user->description}}</td>
+                                <td>{{$user->phone}}</td>
+                                <td></td>
                             </tr>
-                            </thead>
-                            <tbody>
-                            @foreach ($users as $user)
-                                <tr id="{{$user->id}}">
-                                    <td>{{$user->id}}</td>
-                                    <td>{{$user->name}}</td>
-                                    <td>{{$user->surname}}</td>
-                                    <td>{{$user->email}}</td>
-                                    <td>{{$user->description}}</td>
-                                    <td>{{$user->phone}}</td>
-                                    <td></td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
+                        @endforeach
+                        </tbody>
+                    </table>
                 </div>
-                <form action="/admin/manage/departments/add/users" id="addUsersToDepartmentForm" method="POST">
+                <form method="POST">
+                    <meta name="csrf-token" content="{{ csrf_token() }}">
                     @csrf
                     <input name="addUsersDataInput" id="hiddenAddUsersToDepartmentInput" type="hidden">
-                <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button id="submitAddUsersToDepartmentButton" type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button id="submitAddUsersToDepartment" type="button" class="btn btn-primary">Save changes
+                        </button>
+                    </div>
                 </form>
             </div>
             <!-- /.modal-content -->

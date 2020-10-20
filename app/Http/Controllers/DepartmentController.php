@@ -40,9 +40,6 @@ class DepartmentController extends Controller
      */
     public function store(StoreDepartmentPostRequest $request)
     {
-        $request->validate([
-            'name' => 'required',
-        ]);
         // Create new department
         Department::create($request->all());
 
@@ -75,12 +72,14 @@ class DepartmentController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param Department $department
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Department $department)
     {
-        //
+        $department->fill($request->all());
+        $department->save();
+        return redirect()->back()->with(['status' => 'Department updated successfully.']);
     }
 
     /**
@@ -89,8 +88,8 @@ class DepartmentController extends Controller
      * @param $department
      * @return void
      */
-    public function destroy($department)
+    public function destroy(Department $department)
     {
-        //
+        $department->delete();
     }
 }

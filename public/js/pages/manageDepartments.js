@@ -1,5 +1,10 @@
 $(document).ready(function() {
-    let clickedDepartmentId;
+    // Setup csrf token
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
     let manageDepartmentsTable = $('#manageDepartmentsTable').DataTable({
         "paging": true,
         "lengthChange": true,
@@ -17,15 +22,8 @@ $(document).ready(function() {
         "columnDefs": [
             {
                 "targets": 3,
-                "data": null,
                 "className": 'dt-body-center',
                 "orderable": false,
-                "defaultContent":
-                    '<div class="row  justify-content-around">'
-                    + '<button class="btn" name="edit" type="button"><i class="fas fa-edit"></i></button>'
-                    + '<button class="btn" name="addUser" type="button"><i class="fas fa-user-plus"></i></button>'
-                    + '<button class="btn" name="delete"  type="button"><i class="fas fa-trash"></button>'
-                    + '</div>'
             },
             {
                 "targets": [ 0 ],
@@ -34,7 +32,7 @@ $(document).ready(function() {
         ]
     });
 
-    let addUsersToDepartmentTable = $('#addDepartmentsToUserTable').DataTable({
+    let manageDepartmentUsers = $('#manageDepartmentUsers').DataTable({
         "paging": true,
         "lengthChange": true,
         "searching": true,
@@ -65,8 +63,18 @@ $(document).ready(function() {
 
     let tbody =  $('#manageDepartmentsTable tbody');
 
+    // Delete user onclick button
+    tbody.on('click', 'button[name=delete]', function () {
+        let departmentId = this.value;
+        $('#deleteDepartmentForm').attr('action', $('#hiddenDepartmentDeleteActionInput').val()+"/"+departmentId);
+        $('#modalDeleteDepartment').modal('show');
+    });
+
+
     // Edit department
     tbody.on( 'click', 'button[name=edit]', function () {
+        let departmentId = this.value;
+        $('#updateDepartmentForm').attr('action', $('#hiddenDepartmentUpdateActionInput').val()+"/"+departmentId);
         let rowData = manageDepartmentsTable.row( $(this).parents('tr') ).data()
         $('#editDepartmentForm').attr('action', '/admin/manage/departments/'+rowData[0])
         $('#nameInput').val(rowData[1]);
@@ -75,39 +83,37 @@ $(document).ready(function() {
 
     } );
 
-    // Delete department
-    tbody.on( 'click', 'button[name=delete]', function () {
-        let DepartmentId = manageDepartmentsTable.row( $(this).parents('tr') ).data()[0]
-        $('#hiddenModalDeleteDepartmentInput').val(DepartmentId);
-        $('#modalDeleteDepartment').modal('show');
-    } );
-
-    // Add user
+    // Add user on click button
     tbody.on( 'click', 'button[name=addUser]', function () {
-        clickedDepartmentId = manageDepartmentsTable.row( $(this).parents('tr') ).data()[0]
-        addUsersToDepartmentTable.rows().deselect();
-        $.get( "/admin/manage/department/get/users",{departmentId: clickedDepartmentId}, function( data ) {
+        let departmentId = this.value;
+        $('#hiddenAddUsersToDepartmentInput').val(departmentId);
+        manageDepartmentUsers.rows().deselect();
+        $.get("/admin/users/"+departmentId+"/departments", function (data) {
             $(data[0]).each(function (index, value) {
-                let row = addUsersToDepartmentTable.row('#'+value).select();
-
-            })
+                let row = manageDepartmentUsers.row('#' + value).select();
+            });
         });
         $('#modalAddUserToDepartment').modal('show');
     });
 
     // Add users to department
-    $('#submitAddUsersToDepartmentButton').on('click', function(e){
-        let selectedRows = addUsersToDepartmentTable.rows({ selected: true }).data();
-        let deselectedRows = addUsersToDepartmentTable.rows({ selected: false }).data();
-        let data = {};
-        let selectedIds = [];
-        selectedRows.each(function (value, index){
-            selectedIds.push(value[0]);
+    $('#submitAddUsersToDepartment').on('click', function (e) {
+        let departmentId = $('#hiddenAddUsersToDepartmentInput').val();
+        let selectedRows = manageDepartmentUsers.rows({selected: true}).data();
+        let form = [];
+        selectedRows.each(function (value, index) {
+            form.push(value[0]);
         });
-        data.selectedIds = selectedIds;
-        data.departmentId = clickedDepartmentId;
-        $('#hiddenAddUsersToDepartmentInput').val(JSON.stringify(data))
-        $('#addUsersToDepartmentForm').submit();
+        console.log(form)
+        $.ajax({
+            url: "/admin/departments/"+departmentId+"/users",
+            method: "POST",
+            dataType: "json",
+            data: JSON.stringify(form),
+            success:function(data) {
+                console.log(data);
+            }
+        });
     });
 });
 
