@@ -1,14 +1,9 @@
 <?php
 
-use App\Http\Controllers\Admin\ManageDepartmentsController;
-use App\Http\Controllers\Admin\ManageUsersController;
 use App\Http\Controllers\DepartmentController;
-use App\Http\Controllers\DepartmentController2;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\Admin\Ajax\UserController as AjaxUserController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\CreateDepartmentController;
-use App\Http\Controllers\Admin\CreateUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,11 +33,17 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
     Route::post('/users', [UserController::class, 'store'])->name('users.store');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+    Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
     //department
     Route::get('/departments', [DepartmentController::class, 'index'])->name('departments.index');
     Route::get('/departments/create', [DepartmentController::class, 'create'])->name('departments.create');
     Route::post('departments', [DepartmentController::class, 'store'])->name('departments.store');
     Route::delete('departments/{department}', [DepartmentController::class, 'destroy'])->name('departments.destroy');
+    Route::put('departments/{department}', [DepartmentController::class, 'update'])->name('departments.update');
+    //Ajax user
+    Route::get('/users/{user}/departments', [AjaxUserController::class, 'getDepartmentsFromUser'])->name('users.departments.get');
+    Route::post('/users/{user}/departments', [AjaxUserController::class, 'addDepartmentsToUser'])->name('users.departments.set');
+    //Ajax department
     /*
     // Create user
     Route::get('/admin/create/user', [CreateUserController::class, 'create']);

@@ -67,10 +67,10 @@
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
-                    <form action="{{route('users.destroy', '')}}" id="deleteUserForm" method="POST">
+                    <form id="deleteUserForm" method="POST">
                         @csrf
                         @method('DELETE')
-                        <input type="hidden" name="id" id="hiddenModalDeleteUserInput">
+                        <input value="{{route('users.destroy', '')}}" type="hidden" id="hiddenUserDeleteActionInput">
                         <button type="submit" class="btn btn-outline-light">Delete</button>
                     </form>
                 </div>
@@ -90,8 +90,10 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form id="editUserForm" method="POST">
+                <form id="updateUserForm" method="POST">
                     @csrf
+                    @method('PUT')
+                    <input value="{{route('users.update', '')}}" type="hidden" id="hiddenUserUpdateActionInput">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="nameInput">Name</label>
@@ -178,7 +180,9 @@
                         </tfoot>
                     </table>
                 </div>
-                <form action="/admin/manage/user/add/departments" id="addDepartmentsToUserForm" method="POST">
+                <form method="post">
+                    <meta name="csrf-token" content="{{ csrf_token() }}">
+
                     @csrf
                     <input name="addDepartmentsDataInput" id="hiddenAddDepartmentsToUserInput" type="hidden">
                     <div class="modal-footer justify-content-between">

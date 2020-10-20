@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUserPostRequest;
+use App\Http\Requests\UpdateUserPostRequest;
 use App\Models\User;
 use App\Models\Department;
 use App\Traits\UploadImageTrait;
@@ -107,13 +108,15 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param UpdateUserPostRequest $request
+     * @param User $user
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(UpdateUserPostRequest $request,User $user)
     {
-        //
+        $user->fill($request->all());
+        $user->save();
+        return redirect()->back()->with(['status' => 'User updated successfully.']);
     }
 
     /**

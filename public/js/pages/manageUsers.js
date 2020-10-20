@@ -1,5 +1,10 @@
 $(document).ready(function () {
-    let clickedUserId;
+    // Setup csrf token
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
     let table = $('#manageUsersTable').DataTable({
         "paging": true,
         "lengthChange": true,
@@ -60,8 +65,10 @@ $(document).ready(function () {
 
     let tbody = $('#manageUsersTable tbody');
 
-    // edit user
+    // Edit user onclick button
     tbody.on('click', 'button[name=edit]', function () {
+        let UserId = this.value;
+        $('#updateUserForm').attr('action', $('#hiddenUserUpdateActionInput').val()+"/"+UserId);
         let rowData = table.row($(this).parents('tr')).data()
         $('#editUserForm').attr('action', '/admin/manage/users/' + rowData[0])
         $('#nameInput').val(rowData[1]);
@@ -72,47 +79,41 @@ $(document).ready(function () {
         $('#modalEditUser').modal('show');
     });
 
-    // Add user
+    // Delete user onclick button
+    tbody.on('click', 'button[name=delete]', function () {
+        let UserId = this.value;
+        $('#deleteUserForm').attr('action', $('#hiddenUserDeleteActionInput').val()+"/"+UserId);
+        $('#modalDeleteUser').modal('show');
+    });
+
+    // Add user onclick button
     tbody.on('click', 'button[name=addUser]', function () {
-        clickedUserId = table.row($(this).parents('tr')).data()[0]
+        let UserId = this.value;
+        $('#hiddenAddDepartmentsToUserInput').val(UserId);
+        //deselect all rows
         manageUserDepartments.rows().deselect();
-        $.get("/admin/manage/user/get/departments", {userId: clickedUserId}, function (data) {
+        $.get("/admin/users/"+UserId+"/departments", function (data) {
             $(data[0]).each(function (index, value) {
                 let row = manageUserDepartments.row('#' + value).select();
-
-            })
+            });
         });
         $('#modalAddUserToDepartment').modal('show');
     });
 
-    // delete user
-    tbody.on('click', 'button[name=delete]', function () {
-        let UserId = this.value;
-        $('#deleteUserForm').attr('action', function () {
-            return $(this).attr('action')+"/"+UserId;
-        })
-        console.log($('#deleteUserForm').attr('action'));
-        //let deleteFormAttr = $('#deleteUserForm').attr('action');
-
-        //deleteFormAttr = deleteFormAttr+"/"+UserId;
-        //console.log( $('#deleteUserForm').attr('action'));
-        //console.log(deleteFormAttr);
-        $('#deleteUserForm').attr('action')
-        $('#modalDeleteUser').modal('show');
-    });
-
     // Add users to department
     $('#submitAddDepartmentsToUser').on('click', function (e) {
+        let userId = $('#hiddenAddDepartmentsToUserInput').val();
         let selectedRows = manageUserDepartments.rows({selected: true}).data();
-        let data = {};
-        let selectedIds = [];
+        let form = [];
         selectedRows.each(function (value, index) {
-            selectedIds.push(value[0]);
+            form.push(value[0]);
         });
-        data.selectedIds = selectedIds;
-        data.userId = clickedUserId;
-        $('#hiddenAddDepartmentsToUserInput').val(JSON.stringify(data))
-        $('#addDepartmentsToUserForm').submit();
+        $.ajax({
+            url: "/admin/users/"+userId+"/departments",
+            method: "POST",
+            dataType: "json",
+            data: JSON.stringify(form),
+        });
     });
 });
 
