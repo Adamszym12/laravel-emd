@@ -22,7 +22,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="{{route('users.show', Auth::user()->id )}}" class="brand-link">
+            <a href="{{route('users.profile.edit', Auth::user()->id )}}" class="brand-link">
                 <img src="{{asset('/img/AdminLTELogo.png')}}" alt="AdminLTE Logo"
                      class="brand-image img-circle elevation-3"
                      style="opacity: .8">
@@ -37,7 +37,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <img src="{{asset(Auth::user()->profile_picture)}}" class="img-fluid" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="/profile/{{Auth::user()->id}}" class="d-block">{{ Auth::user()->name }} {{ Auth::user()->surname }}</a>
+                        <a href="{{route('users.profile.edit', Auth::user()->id )}}" class="d-block">{{ Auth::user()->name }} {{ Auth::user()->surname }}</a>
                     </div>
                     @endauth
                 </div>

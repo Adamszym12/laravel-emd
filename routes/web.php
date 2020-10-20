@@ -19,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 // Admin/user
 Route::group(['middleware' => ['role:admin|user']], function () {
-    Route::get('/profile/{user}', [UserController::class, 'show'])->name('users.show');
+    Route::get('/profile/{user}/edit', [UserController::class, 'edit'])->name('users.profile.edit');
+    Route::put('/profile/{user}', [UserController::class, 'update'])->name('users.profile.update');
 });
 //Admin
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {

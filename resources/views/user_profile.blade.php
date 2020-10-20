@@ -11,7 +11,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="{{route('users.update', Auth()->user()->id)}}"  METHOD="POST" role="form" enctype="multipart/form-data">
+                <form action="{{route('users.profile.update', Auth()->user()->id)}}"  METHOD="POST" role="form" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="card-body">

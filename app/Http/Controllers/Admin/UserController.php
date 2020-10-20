@@ -7,13 +7,11 @@ use App\Http\Requests\StoreUserPostRequest;
 use App\Http\Requests\UpdateUserPostRequest;
 use App\Models\User;
 use App\Models\Department;
-use App\Traits\UploadImageTrait;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
-    use UploadImageTrait;
 
     /**
      * Display a listing of the resource.
@@ -71,12 +69,16 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param User $user
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        // Auth
+        if(!auth()->user()->hasRole('admin')&&auth()->user()->id!=$user->id){
+            abort(403, 'Access denied');
+        }
+        return view('user_profile', compact('user'));
     }
 
     /**
@@ -88,6 +90,11 @@ class UserController extends Controller
      */
     public function update(UpdateUserPostRequest $request,User $user)
     {
+        // Auth
+        if(!auth()->user()->hasRole('admin')&&auth()->user()->id!=$user->id){
+            abort(403, 'Access denied');
+        }
+
         $user->fill($request->all());
         // Storage image to public/avatars
         if($request->has('profileImage')){
