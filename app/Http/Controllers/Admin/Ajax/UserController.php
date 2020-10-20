@@ -26,6 +26,6 @@ class UserController extends Controller
     {
         $departments = $request->json()->all();
         $user->departments()->sync($departments);
-        return redirect()->back()->with(['status' => 'Users added successfully.']);
+        return response()->json(['success']);
     }
 }

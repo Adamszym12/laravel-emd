@@ -1,10 +1,4 @@
 $(document).ready(function() {
-    // Setup csrf token
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
     let manageDepartmentsTable = $('#manageDepartmentsTable').DataTable({
         "paging": true,
         "lengthChange": true,
@@ -111,7 +105,7 @@ $(document).ready(function() {
             dataType: "json",
             data: JSON.stringify(form),
             success:function(data) {
-                console.log(data);
+                location.reload();
             }
         });
     });

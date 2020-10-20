@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers\Admin\Ajax;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Department;
@@ -19,12 +20,12 @@ class DepartmentController extends Controller
      *
      * @param Request $request
      * @param Department $department
-     * @return \Illuminate\Http\RedirectResponse
+     * @return JsonResponse
      */
     public function addUsersToDepartment(Request $request, Department $department)
     {
         $users = $request->json()->all();
         $department->users()->sync($users);
-        return redirect()->back()->with(['status' => 'Departments added successfully.']);
+        return response()->json(['success']);
     }
 }

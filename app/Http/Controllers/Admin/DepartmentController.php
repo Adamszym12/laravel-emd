@@ -46,6 +46,7 @@ class DepartmentController extends Controller
         return redirect()->back()->with(['status' => 'Department created successfully.']);
     }
 
+
     /**
      * Display the specified resource.
      *
@@ -86,10 +87,11 @@ class DepartmentController extends Controller
      * Remove the specified resource from storage.
      *
      * @param $department
-     * @return void
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Department $department)
     {
         $department->delete();
+        return redirect()->back()->with(['status' => 'User deleted successfully.']);
     }
 }

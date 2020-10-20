@@ -113,6 +113,9 @@ $(document).ready(function () {
             method: "POST",
             dataType: "json",
             data: JSON.stringify(form),
+            success:function(data) {
+                location.reload();
+            }
         });
     });
 });
