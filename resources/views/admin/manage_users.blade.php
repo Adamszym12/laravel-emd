@@ -6,49 +6,54 @@
     <div class="card">
         <!-- /.card-header -->
         <div class="card-body">
-            <table id="manageUsersTable" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Surname</th>
-                    <th>email</th>
-                    <th>description</th>
-                    <th>phone</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach ($users as $user)
+            <div class="table-responsive">
+                <table id="manageUsersTable" class="table table-bordered table-striped">
+                    <thead>
                     <tr>
-                        <td>{{$user->id}}</td>
-                        <td>{{$user->name}}</td>
-                        <td>{{$user->surname}}</td>
-                        <td>{{$user->email}}</td>
-                        <td>{{$user->description}}</td>
-                        <td>{{$user->phone}}</td>
-                        <td>
-                            <div class="row  justify-content-around">
-                                <button class="btn" value="{{$user->id}}" name="edit" type="button"><i class="fas fa-edit"></i></button>
-                                <button class="btn" value="{{$user->id}}" name="addUser" type="button"><i class="fas fa-user-plus"></i></button>
-                                <button class="btn" value="{{$user->id}}" name="delete" type="button"><i class="fas fa-trash"></i></button>
-                            </div>
-                        </td>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>email</th>
+                        <th>description</th>
+                        <th>phone</th>
+                        <th></th>
                     </tr>
-                @endforeach
-                </tbody>
-                <tfoot>
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Surname</th>
-                    <th>email</th>
-                    <th>description</th>
-                    <th>phone</th>
-                    <th></th>
-                </tr>
-                </tfoot>
-            </table>
+                    </thead>
+                    <tbody>
+                    @foreach ($users as $user)
+                        <tr>
+                            <td>{{$user->id}}</td>
+                            <td>{{$user->name}}</td>
+                            <td>{{$user->surname}}</td>
+                            <td>{{$user->email}}</td>
+                            <td>{{$user->description}}</td>
+                            <td>{{$user->phone}}</td>
+                            <td>
+                                <div class="d-flex justify-content-center">
+                                    <button class="btn" value="{{$user->id}}" name="edit" type="button"><i
+                                            class="fas fa-edit"></i></button>
+                                    <button class="btn" value="{{$user->id}}" name="addUser" type="button"><i
+                                            class="fas fa-user-plus"></i></button>
+                                    <button class="btn" value="{{$user->id}}" name="delete" type="button"><i
+                                            class="fas fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>email</th>
+                        <th>description</th>
+                        <th>phone</th>
+                        <th></th>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
         </div>
     </div>
 @endsection
@@ -90,7 +95,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form id="updateUserForm" method="POST">
+                <form id="updateUserForm" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <input value="{{route('users.update', '')}}" type="hidden" id="hiddenUserUpdateActionInput">

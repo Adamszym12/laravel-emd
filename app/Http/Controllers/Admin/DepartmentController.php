@@ -1,19 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\StoreDepartmentPostRequest;
-use App\Http\Requests\StoreUserPostRequest;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\DepartmentRequest;
 use App\Models\Department;
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class DepartmentController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
@@ -25,7 +24,7 @@ class DepartmentController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
@@ -35,10 +34,11 @@ class DepartmentController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     *
+     * @param DepartmentRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(StoreDepartmentPostRequest $request)
+    public function store(DepartmentRequest $request)
     {
         // Create new department
         Department::create($request->all());
@@ -71,11 +71,11 @@ class DepartmentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param DepartmentRequest $request
      * @param Department $department
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request,Department $department)
+    public function update(DepartmentRequest $request,Department $department)
     {
         $department->fill($request->all());
         $department->save();

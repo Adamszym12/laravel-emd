@@ -10,7 +10,6 @@ use App\Models\Department;
 use App\Traits\UploadImageTrait;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -19,7 +18,7 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
@@ -31,7 +30,7 @@ class UserController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
@@ -42,7 +41,7 @@ class UserController extends Controller
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreUserPostRequest $request)
     {
@@ -50,36 +49,11 @@ class UserController extends Controller
         //set role
         $user->assignRole('user');
 
-        //fill user
-        $user->fill([
-            'name' => $request->get('name'),
-            'surname' => $request->get('surname'),
-            'email' => $request->get('email'),
-            'phone' => $request->get('surname'),
-            'description' => $request->get('description'),
-            'password' => Hash::make($request->get('password')),
-        ]);
-
-
-        //add profile image
-        if ($request->has('profileImage')) {
-            // Get image file
-            $image = $request->file('profileImage');
-            // Make a image name based on user name and current timestamp
-            $name = Str::slug($request->input('name')) . '_' . time();
-            // Define folder path
-            $folder = '/uploads/avatars/';
-            // Make a file path where image will be stored [ folder path + file name + file extension]
-            $filePath = $folder . $name . '.' . $image->getClientOriginalExtension();
-            // Upload image
-            $this->uploadImage($image, $folder, 'public', $name);
-            // Set user profile image path in database to filePath
-            $user->profile_picture = $filePath;
-        }
-
+        $user->fill($request->all());
+        $user->password = Hash::make($request->get('password'));
+        $user->profile_picture = Storage::disk('local')->put('/public/avatars', $request->file('profileImage'));
         // Persist user record to database
         $user->save();
-
         return redirect()->back()->with(['status' => 'User created successfully.']);
     }
 
@@ -87,7 +61,7 @@ class UserController extends Controller
      * Display the specified resource.
      *
      * @param User $user
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show(User $user)
     {
@@ -115,6 +89,11 @@ class UserController extends Controller
     public function update(UpdateUserPostRequest $request,User $user)
     {
         $user->fill($request->all());
+        // Storage image to public/avatars
+        if($request->has('profileImage')){
+            Storage::delete($user->profile_picture);
+            $user->profile_picture = Storage::disk('local')->put('/public/avatars', $request->file('profileImage'));
+        }
         $user->save();
         return redirect()->back()->with(['status' => 'User updated successfully.']);
     }

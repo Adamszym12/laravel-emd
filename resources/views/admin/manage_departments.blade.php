@@ -6,43 +6,45 @@
     <div class="card">
         <!-- /.card-header -->
         <div class="card-body">
-            <table id="manageDepartmentsTable" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                    <th></th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach ($departments as $department)
+            <div class="table-responsive">
+                <table id="manageDepartmentsTable" class="table table-bordered table-striped">
+                    <thead>
                     <tr>
-                        <td>{{$department->id}}</td>
-                        <td>{{$department->name}}</td>
-                        <td>{{$department->description}}</td>
-                        <td>
-                            <div class="row  justify-content-around">
-                                <button class="btn" value="{{$department->id}}" name="edit" type="button"><i
-                                        class="fas fa-edit"></i></button>
-                                <button class="btn" value="{{$department->id}}" name="addUser" type="button"><i
-                                        class="fas fa-user-plus"></i></button>
-                                <button class="btn" value="{{$department->id}}" name="delete" type="button"><i
-                                        class="fas fa-trash"></i></button>
-                            </div>
-                        </td>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th></th>
                     </tr>
-                @endforeach
-                </tbody>
-                <tfoot>
-                <tr>
-                    <th></th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th></th>
-                </tr>
-                </tfoot>
-            </table>
+                    </thead>
+                    <tbody>
+                    @foreach ($departments as $department)
+                        <tr>
+                            <td>{{$department->id}}</td>
+                            <td>{{$department->name}}</td>
+                            <td>{{$department->description}}</td>
+                            <td>
+                                <div class="row  justify-content-around">
+                                    <button class="btn" value="{{$department->id}}" name="edit" type="button"><i
+                                            class="fas fa-edit"></i></button>
+                                    <button class="btn" value="{{$department->id}}" name="addUser" type="button"><i
+                                            class="fas fa-user-plus"></i></button>
+                                    <button class="btn" value="{{$department->id}}" name="delete" type="button"><i
+                                            class="fas fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th></th>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
         </div>
     </div>
 @endsection

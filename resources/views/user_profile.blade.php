@@ -11,8 +11,9 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form METHOD="POST" role="form" enctype="multipart/form-data">
+                <form action="{{route('users.update', Auth()->user()->id)}}"  METHOD="POST" role="form" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="card-body">
                         <div class="form-group">
                             <label for="nameInput">Name</label>
