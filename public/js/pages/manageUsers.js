@@ -67,32 +67,35 @@ $(document).ready(function () {
 
     // Edit user onclick button
     tbody.on('click', 'button[name=edit]', function () {
-        let UserId = this.value;
-        $('#updateUserForm').attr('action', $('#hiddenUserUpdateActionInput').val()+"/"+UserId);
-        let rowData = table.row($(this).parents('tr')).data()
-        $('#editUserForm').attr('action', '/admin/manage/users/' + rowData[0])
-        $('#nameInput').val(rowData[1]);
-        $('#surnameInput').val(rowData[2]);
-        $('#emailInput').val(rowData[3]);
-        $('#descriptionInput').val(rowData[4]);
-        $('#phoneInput').val(rowData[5]);
+        let userId = this.value;
+        $('#updateUserForm').attr('action', $('#hiddenUserUpdateActionInput').val()+"/"+userId);
+        if ($('#idInput').val() !== userId) {
+            let rowData = table.row($(this).parents('tr')).data()
+            $('#editUserForm').attr('action', '/admin/manage/users/' + rowData[0])
+            $('#idInput').val(userId);
+            $('#nameInput').val(rowData[1]);
+            $('#surnameInput').val(rowData[2]);
+            $('#emailInput').val(rowData[3]);
+            $('#descriptionInput').val(rowData[4]);
+            $('#phoneInput').val(rowData[5]);
+        }
         $('#modalEditUser').modal('show');
     });
 
     // Delete user onclick button
     tbody.on('click', 'button[name=delete]', function () {
-        let UserId = this.value;
-        $('#deleteUserForm').attr('action', $('#hiddenUserDeleteActionInput').val()+"/"+UserId);
+        let userId = this.value;
+        $('#deleteUserForm').attr('action', $('#hiddenUserDeleteActionInput').val()+"/"+userId);
         $('#modalDeleteUser').modal('show');
     });
 
     // Add department  onclick button
     tbody.on('click', 'button[name=addUser]', function () {
-        let UserId = this.value;
-        $('#hiddenAddDepartmentsToUserInput').val(UserId);
+        let userId = this.value;
+        $('#hiddenAddDepartmentsToUserInput').val(userId);
         //deselect all rows
         manageUserDepartments.rows().deselect();
-        $.get("/admin/users/"+UserId+"/departments", function (data) {
+        $.get("/admin/users/"+userId+"/departments", function (data) {
             $(data[0]).each(function (index, value) {
                 let row = manageUserDepartments.row('#' + value).select();
             });

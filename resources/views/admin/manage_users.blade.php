@@ -101,28 +101,31 @@
                     <input value="{{route('users.update', '')}}" type="hidden" id="hiddenUserUpdateActionInput">
                     <div class="modal-body">
                         <div class="form-group">
+                            <input type="hidden" id="idInput"  name="id" value="{{old('id')}}">
+                        </div>
+                        <div class="form-group">
                             <label for="nameInput">Name</label>
-                            <input name="name" type="text" class="form-control" id="nameInput">
+                            <input name="name" type="text" class="form-control" id="nameInput" value="{{old('name')}}">
                         </div>
                         <div class="form-group">
                             <label for="surnameInput">Surname</label>
                             <input name="surname" type="text" class="form-control" id="surnameInput"
-                                   placeholder="Enter surname">
+                                   placeholder="Enter surname" value="{{old('surname')}}">
                         </div>
                         <div class="form-group">
                             <label for="emailInput">Email address</label>
                             <input name="email" type="email" class="form-control" id="emailInput"
-                                   placeholder="Enter email">
+                                   placeholder="Enter email" value="{{old('email')}}">
                         </div>
                         <div class="form-group">
                             <label for="phoneInput">Phone number</label>
                             <input name="phone" type="text" class="form-control" id="phoneInput"
-                                   placeholder="Enter phone number">
+                                   placeholder="Enter phone number" value="{{old('phone')}}">
                         </div>
                         <div class="form-group">
                             <label for="descriptionInput">Description</label>
                             <textarea name="description" class="form-control" id="descriptionInput"
-                                      placeholder="Enter description"></textarea>
+                                      placeholder="Enter description">{{old('description')}}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="profileImage">Profile image</label>
