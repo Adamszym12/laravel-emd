@@ -100,7 +100,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         @role('user')
                         @foreach(Auth::user()->departments as $department)
                             <li class="nav-item">
-                                <a href="{{url('department/'.$department->id)}}"
+                                <a href="{{route('departments.show', $department->id)}}"
                                    class="nav-link {{ (request()->is('department/'.$department->id)) ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>

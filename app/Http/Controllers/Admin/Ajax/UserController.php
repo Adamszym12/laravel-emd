@@ -28,6 +28,6 @@ class UserController extends Controller
     {
         $departments = $request->json()->all();
         $user->departments()->sync($departments);
-        return response()->json(['success']);
+        return response()->json(['Departments attached to user']);
     }
 }

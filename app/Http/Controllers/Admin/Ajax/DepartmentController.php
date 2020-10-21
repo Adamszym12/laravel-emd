@@ -27,6 +27,6 @@ class DepartmentController extends Controller
     {
         $users = $request->json()->all();
         $department->users()->sync($users);
-        return response()->json(['success']);
+        return response()->json(['Users attached to department']);
     }
 }

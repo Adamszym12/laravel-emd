@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => ['role:admin|user']], function () {
     Route::get('/profile/{user}/edit', [UserController::class, 'edit'])->name('users.profile.edit')->middleware('can:edit,user');
     Route::put('/profile/{user}', [UserController::class, 'update'])->name('users.profile.update')->middleware('can:update,user');
-    Route::get('/departments/{department}', [DepartmentController::class, 'show'])->name('departments.show');
+    Route::get('/departments/{department}', [DepartmentController::class, 'show'])->name('departments.show')->middleware('can:show,department');
     //temporary
     Route::redirect('/', '/admin/users');
 });

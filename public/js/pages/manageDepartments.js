@@ -26,10 +26,6 @@ $(document).ready(function () {
                 "className": 'dt-body-center',
                 "orderable": false,
             },
-            {
-                "targets": [0],
-                "visible": false
-            }
         ]
     });
 

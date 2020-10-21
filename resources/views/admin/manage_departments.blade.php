@@ -11,7 +11,7 @@
                 <table id="manageDepartmentsTable" class="table table-bordered table-striped">
                     <thead>
                     <tr>
-                        <th></th>
+                        <th>Id</th>
                         <th>Name</th>
                         <th>Description</th>
                         <th></th>

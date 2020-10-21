@@ -28,10 +28,6 @@ $(document).ready(function () {
                 "className": 'dt-body-center',
                 "orderable": false,
             },
-            {
-                "targets": [0],
-                "visible": false
-            }
         ]
     });
 
@@ -116,9 +112,9 @@ $(document).ready(function () {
             method: "POST",
             dataType: "json",
             data: JSON.stringify(form),
-            success:function() {
+            success:function(response) {
                 $('#modalAddUserToDepartment').modal('hide');
-                toastr.success("Action has been done successfully")
+                toastr.success(response)
             },
             error:function (data){
                 toastr.error();
