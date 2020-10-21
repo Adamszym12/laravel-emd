@@ -17,23 +17,23 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="nameInput">Name</label>
-                            <input name="name" type="text" value="{{$user->name}}" class="form-control" id="nameInput" placeholder="Enter name">
+                            <input name="name" type="text" value="{{old('name') ?? $user->name}}" class="form-control" id="nameInput" placeholder="Enter name">
                         </div>
                         <div class="form-group">
                             <label for="surnameInput">Surname</label>
-                            <input name="surname" type="text" value="{{$user->surname}}" class="form-control" id="surnameInput" placeholder="Enter surname">
+                            <input name="surname" type="text" value="{{old('surname') ?? $user->surname}}" class="form-control" id="surnameInput" placeholder="Enter surname">
                         </div>
                         <div class="form-group">
                             <label for="emailInput">Email address</label>
-                            <input name="email" type="email" value="{{$user->email}}" class="form-control" id="emailInput" placeholder="Enter email">
+                            <input name="email" type="email" value="{{old('email') ?? $user->email}}" class="form-control" id="emailInput" placeholder="Enter email">
                         </div>
                         <div class="form-group">
                             <label for="phoneInput">Phone number</label>
-                            <input name="phone" type="text" value="{{$user->phone}}" class="form-control" id="phoneInput" placeholder="Enter phone number">
+                            <input name="phone" type="text" value="{{old('phone') ?? $user->phone}}" class="form-control" id="phoneInput" placeholder="Enter phone number">
                         </div>
                         <div class="form-group">
                             <label for="descriptionInput">Description</label>
-                            <textarea name="description" class="form-control" id="descriptionInput" placeholder="Enter description">{{$user->description}}</textarea>
+                            <textarea name="description" class="form-control" id="descriptionInput" placeholder="Enter description">{{old('description') ?? $user->description}}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="profileImage">Profile image</label>

@@ -14,7 +14,7 @@ class DepartmentSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0; $i < 300; $i++) {
+        for ($i=1; $i < 31; $i++) {
             DB::table('departments')->insert([
                 'name' => 'Department' .$i,
                 'description' => 'ice. As particular to companions a ask. Dearest affixed enquire on explain opinion he. Reached who the mrs joy offices pleased. Towards did colonel article any parties. ',

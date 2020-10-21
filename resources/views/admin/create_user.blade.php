@@ -16,23 +16,23 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="nameInput">Name</label>
-                            <input name="name" type="text" class="form-control" id="nameInput" placeholder="Enter name">
+                            <input name="name" type="text" class="form-control" id="nameInput" value="{{old('name')}}" placeholder="Enter name">
                         </div>
                         <div class="form-group">
                             <label for="surnameInput">Surname</label>
-                            <input name="surname" type="text" class="form-control" id="surnameInput" placeholder="Enter surname">
+                            <input name="surname" type="text" class="form-control" id="surnameInput" value="{{old('surname')}}" placeholder="Enter surname">
                         </div>
                         <div class="form-group">
                             <label for="emailInput">Email address</label>
-                            <input name="email" type="email" class="form-control" id="emailInput" placeholder="Enter email">
+                            <input name="email" type="email" class="form-control" id="emailInput" value="{{old('email')}}" placeholder="Enter email">
                         </div>
                         <div class="form-group">
                             <label for="phoneInput">Phone number</label>
-                            <input name="phone" type="text" class="form-control" id="phoneInput" placeholder="Enter phone number">
+                            <input name="phone" type="text" class="form-control" id="phoneInput" value="{{old('phone')}}" placeholder="Enter phone number">
                         </div>
                         <div class="form-group">
                             <label for="descriptionInput">Description</label>
-                            <textarea name="description" class="form-control" id="descriptionInput" placeholder="Enter description"></textarea>
+                            <textarea name="description" class="form-control" id="descriptionInput" placeholder="Enter description">{{old('description')}}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="passwordInput">Password</label>

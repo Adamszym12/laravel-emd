@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers\Admin\Ajax;
 
+
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -10,19 +11,19 @@ use App\Models\Department;
 
 class DepartmentController extends Controller
 {
-    public function getUsersFromDepartment(Department $department){
-        $departments = $department->departments->pluck('id');
-        return response()->json([$departments]);
+    public function index(Department $department){
+        $users = $department->users->pluck('id');
+        return response()->json([$users]);
     }
 
     /**
-     * Attach departments to departments
+     * Attach users to departments
      *
      * @param Request $request
      * @param Department $department
      * @return JsonResponse
      */
-    public function addUsersToDepartment(Request $request, Department $department)
+    public function store(Request $request, Department $department)
     {
         $users = $request->json()->all();
         $department->users()->sync($users);

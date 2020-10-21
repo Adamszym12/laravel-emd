@@ -20,22 +20,24 @@ class UserSeeder extends Seeder
         $user = User::create([
             'name' => 'Admin',
             'surname' => 'Admin',
-            'email' => 'admin@wp.pl',
+            'email' => 'admin@example.com',
             'phone' => '662280993',
             'description' => 'Dearest affixed enquire on explain opinion he. Reached who the mrs joy offices pleased',
             'password' => Hash::make('admin'),
+            'profile_picture' => 'storage/avatars/admin.png'
         ]);
         $user->assignRole('admin');
-        for ($i=0; $i < 300; $i++) {
+        for ($i=2; $i < 302; $i++) {
             $user = User::create([
                 'name' => 'User'.$i,
                 'surname' => 'User'.$i,
-                'email' => 'user'.$i.'@wp.pl',
+                'email' => 'user'.$i.'@example.com',
                 'phone' => '123123123',
                 'description' => 'Dearest affixed enquire on explain opinion he. Reached who the mrs joy offices pleased',
                 'password' => Hash::make('user'),
+                'profile_picture' => 'storage/avatars/user.png'
             ]);
-            $user->assignRole('admin');
+            $user->assignRole('user');
         }
     }
 }

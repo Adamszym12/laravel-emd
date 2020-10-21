@@ -19,8 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 // Admin/user
 Route::group(['middleware' => ['role:admin|user']], function () {
-    Route::get('/profile/{user}/edit', [UserController::class, 'edit'])->name('users.profile.edit');
-    Route::put('/profile/{user}', [UserController::class, 'update'])->name('users.profile.update');
+    Route::get('/profile/{user}/edit', [UserController::class, 'edit'])->name('users.profile.edit')->middleware('can:edit,user');
+    Route::put('/profile/{user}', [UserController::class, 'update'])->name('users.profile.update')->middleware('can:update,user');
+    Route::get('/departments/{department}', [DepartmentController::class, 'show'])->name('departments.show');
     //temporary
     Route::redirect('/', '/admin/users');
 });
@@ -39,9 +40,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
     Route::delete('departments/{department}', [DepartmentController::class, 'destroy'])->name('departments.destroy');
     Route::put('departments/{department}', [DepartmentController::class, 'update'])->name('departments.update');
     //Ajax user
-    Route::get('/users/{user}/departments', [AjaxUserController::class, 'getDepartmentsFromUser'])->name('users.departments.get');
-    Route::post('/users/{user}/departments', [AjaxUserController::class, 'addDepartmentsToUser'])->name('users.departments.set');
+    Route::get('/users/{user}/departments', [AjaxUserController::class, 'index'])->name('ajax.departments.index');
+    Route::post('/users/{user}/departments', [AjaxUserController::class, 'store'])->name('ajax.departments.store');
     //Ajax department
-    Route::get('/departments/{department}/users', [AjaxDepartmentController::class, 'getUsersFromDepartment'])->name('departments.users.get');
-    Route::post('/departments/{department}/users', [AjaxDepartmentController::class, 'addUsersToDepartment'])->name('departments.users.set');
+    Route::get('/departments/{department}/users', [AjaxDepartmentController::class, 'index'])->name('ajax.users.index');
+    Route::post('/departments/{department}/users', [AjaxDepartmentController::class, 'store'])->name('ajax.users.store');
 });

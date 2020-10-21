@@ -74,10 +74,6 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        // Auth
-        if(!auth()->user()->hasRole('admin')&&auth()->user()->id!=$user->id){
-            abort(403, 'Access denied');
-        }
         return view('user_profile', compact('user'));
     }
 
@@ -90,10 +86,6 @@ class UserController extends Controller
      */
     public function update(UpdateUserPostRequest $request,User $user)
     {
-        // Auth
-        if(!auth()->user()->hasRole('admin')&&auth()->user()->id!=$user->id){
-            abort(403, 'Access denied');
-        }
 
         $user->fill($request->all());
         // Storage image to public/avatars

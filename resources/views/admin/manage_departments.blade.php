@@ -154,7 +154,6 @@
                 </div>
                 <form method="POST">
                     <meta name="csrf-token" content="{{ csrf_token() }}">
-                    @csrf
                     <input name="addUsersDataInput" id="hiddenAddUsersToDepartmentInput" type="hidden">
                     <div class="modal-footer justify-content-between">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

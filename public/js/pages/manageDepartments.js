@@ -1,4 +1,10 @@
 $(document).ready(function() {
+    // Setup csrf token
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
     let manageDepartmentsTable = $('#manageDepartmentsTable').DataTable({
         "paging": true,
         "lengthChange": true,
@@ -82,7 +88,7 @@ $(document).ready(function() {
         let departmentId = this.value;
         $('#hiddenAddUsersToDepartmentInput').val(departmentId);
         manageDepartmentUsers.rows().deselect();
-        $.get("/admin/users/"+departmentId+"/departments", function (data) {
+        $.get("/admin/departments/"+departmentId+"/users", function (data) {
             $(data[0]).each(function (index, value) {
                 let row = manageDepartmentUsers.row('#' + value).select();
             });
@@ -98,14 +104,13 @@ $(document).ready(function() {
         selectedRows.each(function (value, index) {
             form.push(value[0]);
         });
-        console.log(form)
         $.ajax({
             url: "/admin/departments/"+departmentId+"/users",
             method: "POST",
             dataType: "json",
             data: JSON.stringify(form),
             success:function(data) {
-                location.reload();
+                //location.reload();
             }
         });
     });
