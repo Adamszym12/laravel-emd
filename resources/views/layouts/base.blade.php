@@ -16,8 +16,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="{{ asset('css/adminlte.css') }}">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700">
-    <!-- SweetAlert2 -->
-    <link rel="stylesheet" href="{{asset('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="{{asset('plugins/toastr/toastr.min.css')}}">
     @stack('stylesheets')
 </head>
 <body class="hold-transition sidebar-mini">
@@ -135,14 +135,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Content Header (Page header) -->
             <div class="content-header">
                 @if($errors->any())
-                    <div id="errorsHandlerDiv" class="d-none">
+                    <div class="d-none toastrError">
                         @foreach($errors->all() as $error)
-                            <li>{{$error}}</li>
+                        {{$error}}<br>
                         @endforeach
                     </div>
                 @endif
                 @if (session('status'))
-                    <div class="alert alert-success">
+                    <div class="d-none toastrSuccess">
                         {{ session('status') }}
                     </div>
                 @endif
@@ -207,8 +207,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 <script src="{{ asset('js/adminlte.min.js') }}"></script>
 <script src="{{ asset('js/statusHandler.js') }}"></script>
-<!-- SweetAlert2 -->
-<script src="{{ asset('plugins/sweetalert2/sweetalert2.min.js') }}"></script>
+<!-- Toastr -->
+<script src="{{ asset('plugins/toastr/toastr.min.js') }}"></script>
 @stack('scripts')
 </body>
 
