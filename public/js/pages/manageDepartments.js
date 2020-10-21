@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     // Setup csrf token
     $.ajaxSetup({
@@ -15,10 +15,10 @@ $(document).ready(function() {
         "info": true,
         "autoWidth": false,
         "columns": [
-            { "width": "0%" },
-            { "width": "30%" },
-            { "width": "57%" },
-            { "width": "13%" },
+            {"width": "0%"},
+            {"width": "30%"},
+            {"width": "57%"},
+            {"width": "13%"},
         ],
         "columnDefs": [
             {
@@ -27,7 +27,7 @@ $(document).ready(function() {
                 "orderable": false,
             },
             {
-                "targets": [ 0 ],
+                "targets": [0],
                 "visible": false
             }
         ]
@@ -41,55 +41,57 @@ $(document).ready(function() {
         "info": true,
         "rowId": "Id",
         "autoWidth": false,
-        "columns": [
-        ],
+        "columns": [],
         "columnDefs": [
             {
                 "className": 'select-checkbox',
                 "orderable": false,
-                "targets":[6]
+                "targets": [6]
             },
             {
-                "targets": [ 0 ],
+                "targets": [0],
                 "visible": false
             }
         ],
         select: {
-            style:    'multi',
+            style: 'multi',
             selector: 'td:nth-child(6)'
         },
-        order: [[ 1, 'asc' ]]
+        order: [[1, 'asc']]
 
     });
 
-    let tbody =  $('#manageDepartmentsTable tbody');
+    let tbody = $('#manageDepartmentsTable tbody');
 
     // Delete user onclick button
     tbody.on('click', 'button[name=delete]', function () {
         let departmentId = this.value;
-        $('#deleteDepartmentForm').attr('action', $('#hiddenDepartmentDeleteActionInput').val()+"/"+departmentId);
+        $('#deleteDepartmentForm').attr('action', $('#hiddenDepartmentDeleteActionInput').val() + "/" + departmentId);
         $('#modalDeleteDepartment').modal('show');
     });
 
 
     // Edit department
-    tbody.on( 'click', 'button[name=edit]', function () {
+    tbody.on('click', 'button[name=edit]', function () {
         let departmentId = this.value;
-        $('#updateDepartmentForm').attr('action', $('#hiddenDepartmentUpdateActionInput').val()+"/"+departmentId);
-        let rowData = manageDepartmentsTable.row( $(this).parents('tr') ).data()
-        $('#editDepartmentForm').attr('action', '/admin/manage/departments/'+rowData[0])
-        $('#nameInput').val(rowData[1]);
-        $('#descriptionInput').val(rowData[2]);
+        $('#updateDepartmentForm').attr('action', $('#hiddenDepartmentUpdateActionInput').val() + "/" + departmentId);
+        if ($('#idInput').val() !== departmentId) {
+            let rowData = manageDepartmentsTable.row($(this).parents('tr')).data()
+            $('#editDepartmentForm').attr('action', '/admin/manage/departments/' + rowData[0])
+            $('#idInput').val(rowData[0]);
+            $('#nameInput').val(rowData[1]);
+            $('#descriptionInput').val(rowData[2]);
+        }
         $('#modalEditDepartment').modal('show');
 
-    } );
+    });
 
     // Add user on click button
-    tbody.on( 'click', 'button[name=addUser]', function () {
+    tbody.on('click', 'button[name=addUser]', function () {
         let departmentId = this.value;
         $('#hiddenAddUsersToDepartmentInput').val(departmentId);
         manageDepartmentUsers.rows().deselect();
-        $.get("/admin/departments/"+departmentId+"/users", function (data) {
+        $.get("/admin/departments/" + departmentId + "/users", function (data) {
             $(data[0]).each(function (index, value) {
                 let row = manageDepartmentUsers.row('#' + value).select();
             });
@@ -106,12 +108,16 @@ $(document).ready(function() {
             form.push(value[0]);
         });
         $.ajax({
-            url: "/admin/departments/"+departmentId+"/users",
+            url: "/admin/departments/" + departmentId + "/users",
             method: "POST",
             dataType: "json",
             data: JSON.stringify(form),
-            success:function(data) {
-                //location.reload();
+            success: function () {
+                $('#modalAddUserToDepartment').modal('hide');
+                toastr.success("Action has been done successfully")
+            },
+            error: function (data) {
+                toastr.error();
             }
         });
     });

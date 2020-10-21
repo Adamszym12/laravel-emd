@@ -4,6 +4,7 @@
 @section('title', 'Manage departments')
 @section('content')
     <div class="card">
+        {{old('id')}}
         <!-- /.card-header -->
         <div class="card-body">
             <div class="table-responsive">
@@ -93,6 +94,9 @@
                     <input value="{{route('departments.update', '')}}" type="hidden"
                            id="hiddenDepartmentUpdateActionInput">
                     <div class="modal-body">
+                        <div class="form-group">
+                            <input type="hidden" id="idInput"  name="id" value="{{old('id')}}">
+                        </div>
                         <div class="form-group">
                             <label for="nameInput">Name</label>
                             <input value="{{old('name')}}" name="name" type="text" class="form-control" id="nameInput">

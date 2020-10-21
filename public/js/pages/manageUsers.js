@@ -113,8 +113,12 @@ $(document).ready(function () {
             method: "POST",
             dataType: "json",
             data: JSON.stringify(form),
-            success:function(data) {
-                location.reload();
+            success:function() {
+                $('#modalAddUserToDepartment').modal('hide');
+                toastr.success("Action has been done successfully")
+            },
+            error:function (data){
+                toastr.error();
             }
         });
     });
