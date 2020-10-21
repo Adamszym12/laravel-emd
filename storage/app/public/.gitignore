@@ -1,4 +1,10 @@
-!./avatars/admin.png
-!./avatars/user.png
+# Ignore everything
 *
+
+# But not these files...
 !.gitignore
+!admin.png
+!user.png
+
+# ...even if they are in subdirectories
+!*/
