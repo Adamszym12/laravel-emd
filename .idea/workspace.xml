@@ -5,64 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2226954e-98b3-4e6b-abf9-8f25d8e3e48c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Policies/UserPolicy.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Ajax/DepartmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Ajax/DepartmentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Ajax/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Ajax/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreUserPostRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreUserPostRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DepartmentSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DepartmentSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/UserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/UserSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/pages/manageDepartments.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pages/manageDepartments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/admin_1602700306.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/admin_1602707617.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/admin_1602873315.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/admin_1602876561.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/admin_1602933204.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/admin_1602933215.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/asdf_1602876594.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/asdfasdf_1602876588.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/asdfasdf_1602876600.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/asdfasdf_1602876603.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/aspoidfjkasf_1602874164.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/dfghdfgh_1602881574.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/dfghdfgh_1602881577.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/dfghdfgh_1602881584.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/dfghdfgh_1602881603.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/dfghdfgh_1602881612.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/dfghdfghjmbb_1602881595.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/dfghdfghndfghnm_1602881548.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/name2_1602842994.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/name2_1602843002.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/name_1602843026.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/sadfg_1602962630.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/sdafgsdfg_1602881529.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/sdafgsdfg_1602881532.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/sdfg_1602843011.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/sdfgsdfg_1602874174.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/sdfgsdfg_1602874180.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/sdfgsdfg_1602874188.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/sdfgsdfg_1602881539.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/sdfgsdfgsdfg_1602874195.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/sdfgsdfgsdfg_1602874200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/sdfgsdfgsdfg_1602874204.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/sdfgsdsdfgsdfg_1602881556.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/sdfgsdsdfgsdfg_1602881559.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/user123_1603109949.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/user1_1602708512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/user1_1602842983.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/user1_1602876578.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/user_1602934829.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/user_1602934943.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/avatars/useruser_1602962043.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/create_department.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/create_department.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/create_user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/create_user.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/manage_departments.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/manage_departments.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/manage_users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/manage_users.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user_profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/app/public/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/storage/app/public/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -258,7 +201,7 @@
       <workItem from="1602962823255" duration="1509000" />
       <workItem from="1603176858931" duration="24631000" />
       <workItem from="1603204007444" duration="1724000" />
-      <workItem from="1603266271803" duration="6682000" />
+      <workItem from="1603266271803" duration="6761000" />
     </task>
     <servers />
   </component>
