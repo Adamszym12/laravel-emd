@@ -13,8 +13,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('css/adminlte.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/adminlte.css') }}">
     <!-- Google Font: Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="{{asset('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}">
     @stack('stylesheets')
 </head>
 <body class="hold-transition sidebar-mini">
@@ -132,7 +135,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Content Header (Page header) -->
             <div class="content-header">
                 @if($errors->any())
-                    <div class="alert alert-danger">
+                    <div id="errorsHandlerDiv" class="d-none">
                         @foreach($errors->all() as $error)
                             <li>{{$error}}</li>
                         @endforeach
@@ -203,6 +206,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('js/adminlte.min.js') }}"></script>
+<script src="{{ asset('js/statusHandler.js') }}"></script>
+<!-- SweetAlert2 -->
+<script src="{{ asset('plugins/sweetalert2/sweetalert2.min.js') }}"></script>
 @stack('scripts')
 </body>
 

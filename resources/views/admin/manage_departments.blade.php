@@ -95,12 +95,12 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="nameInput">Name</label>
-                            <input name="name" type="text" class="form-control" id="nameInput">
+                            <input value="{{old('name')}}" name="name" type="text" class="form-control" id="nameInput">
                         </div>
                         <div class="form-group">
                             <label for="descriptionInput">Description</label>
                             <textarea name="description" type="text" class="form-control"
-                                      id="descriptionInput"></textarea>
+                                      id="descriptionInput">{{old('description')}}</textarea>
                         </div>
                     </div>
                     <div class="modal-footer justify-content-between">

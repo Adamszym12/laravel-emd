@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     // Setup csrf token
     $.ajaxSetup({
         headers: {
