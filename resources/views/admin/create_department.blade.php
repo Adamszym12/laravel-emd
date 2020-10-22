@@ -1,5 +1,6 @@
 @extends('layouts.base')
 
+@section('breadcrumb', Breadcrumbs::render('departments.create'))
 @section('pageName', '')
 @section('title', 'departments')
 @section('content')

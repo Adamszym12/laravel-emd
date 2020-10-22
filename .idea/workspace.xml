@@ -23,26 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2226954e-98b3-4e6b-abf9-8f25d8e3e48c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/UserProfileController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/breadcrumbs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/directory-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/directory-project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Ajax/DepartmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Ajax/DepartmentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Ajax/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Ajax/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/DepartmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DepartmentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Policies/UserPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/UserPolicy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/pages/manageDepartments.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pages/manageDepartments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/pages/manageUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pages/manageUsers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/create_department.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/create_department.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/create_user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/create_user.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/manage_departments.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/manage_departments.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/manage_users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/manage_users.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user_profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/breadcrumbs.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/breadcrumbs.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +232,7 @@
       <workItem from="1603266271803" duration="14285000" />
       <workItem from="1603284796698" duration="9581000" />
       <workItem from="1603350852678" duration="20908000" />
-      <workItem from="1603375761787" duration="367000" />
+      <workItem from="1603375761787" duration="1620000" />
     </task>
     <servers />
   </component>

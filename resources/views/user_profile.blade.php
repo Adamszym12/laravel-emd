@@ -1,5 +1,6 @@
 @extends('layouts.base')
 
+@section('breadcrumb', Breadcrumbs::render('profile'))
 @section('pageName', '')
 @section('title', 'profile')
 @section('content')

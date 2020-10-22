@@ -146,7 +146,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
                 @endif
                 <div class="container-fluid">
-                    {{ Breadcrumbs::render('admin/departments') }}
+                    @yield('breadcrumb')
                 </div><!-- /.container-fluid -->
             </div>
             <!-- /.content-header -->
