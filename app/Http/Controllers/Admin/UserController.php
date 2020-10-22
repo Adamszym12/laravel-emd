@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUserPostRequest;
-use App\Http\Requests\UpdateUserPostRequest;
 use App\Models\User;
 use App\Models\Department;
 use Illuminate\Support\Facades\Hash;
@@ -49,7 +48,7 @@ class UserController extends Controller
 
         $user->fill($request->all());
         $user->password = Hash::make($request->get('password'));
-        $user->profile_picture = Storage::disk('local')->put('/public/avatars', $request->file('profileImage'));
+        $user->profile_picture = "/storage/avatars/".basename(Storage::disk('local')->putFile('/public/avatars', $request->file('profileImage')));
         // Persist user record to database
         $user->save();
         return redirect()->back()->with(['status' => 'User created successfully.']);
@@ -64,37 +63,6 @@ class UserController extends Controller
     public function show(User $user)
     {
         return view('user_profile', compact('user'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param User $user
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
-     */
-    public function edit(User $user)
-    {
-        return view('user_profile', compact('user'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param UpdateUserPostRequest $request
-     * @param User $user
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function update(UpdateUserPostRequest $request,User $user)
-    {
-
-        $user->fill($request->all());
-        // Storage image to public/avatars
-        if($request->has('profileImage')){
-            Storage::delete($user->profile_picture);
-            $user->profile_picture = Storage::disk('local')->put('/public/avatars', $request->file('profileImage'));
-        }
-        $user->save();
-        return redirect()->back()->with(['status' => 'User updated successfully.']);
     }
 
     /**

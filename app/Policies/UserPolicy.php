@@ -26,12 +26,4 @@ class UserPolicy
         }
         return false;
     }
-
-    public function edit($currentUser,$user)
-    {
-        if($currentUser->hasRole('admin')||$currentUser->id == $user->id){
-            return true;
-        }
-        return false;
-    }
 }

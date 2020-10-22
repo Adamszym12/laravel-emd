@@ -97,8 +97,6 @@
                 </div>
                 <form id="updateUserForm" method="POST" enctype="multipart/form-data">
                     @csrf
-                    @method('PUT')
-                    <input value="{{route('users.update', '')}}" type="hidden" id="hiddenUserUpdateActionInput">
                     <div class="modal-body">
                         <div class="form-group">
                             <input type="hidden" id="idInput"  name="id" value="{{old('id')}}">

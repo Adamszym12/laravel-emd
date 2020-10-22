@@ -5,6 +5,11 @@ $(document).ready(function () {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+    $.fn.dataTable.ext.order['dom-checkbox'] = function (settings, col) {
+        return this.api().column(col, {order: 'index'}).nodes().map(function (td, i) {
+            return $(td).closest('tr').hasClass('selected') ? '1' : '0';
+        });
+    }
     let table = $('#manageUsersTable').DataTable({
         "paging": true,
         "lengthChange": true,
@@ -39,24 +44,17 @@ $(document).ready(function () {
         "info": true,
         "rowId": "Id",
         "autoWidth": false,
-        "columns": [],
         "columnDefs": [
             {
                 "className": 'select-checkbox',
-                "orderable": false,
-                "targets": [3]
+                "targets": 3,
+                "orderDataType": 'dom-checkbox'
             },
-            {
-                "targets": [0],
-                "visible": false
-            }
         ],
         select: {
             style: 'multi',
             selector: 'td:nth-child(3)'
         },
-        order: [[1, 'asc']]
-
     });
 
     let tbody = $('#manageUsersTable tbody');
@@ -64,9 +62,9 @@ $(document).ready(function () {
     // Edit user onclick button
     tbody.on('click', 'button[name=edit]', function () {
         let userId = this.value;
-        $('#updateUserForm').attr('action', $('#hiddenUserUpdateActionInput').val()+"/"+userId);
+        $('#updateUserForm').attr('action', $('#hiddenUserUpdateActionInput').val() + "/" + userId);
+        let rowData = table.row($(this).parents('tr')).data()
         if ($('#idInput').val() !== userId) {
-            let rowData = table.row($(this).parents('tr')).data()
             $('#editUserForm').attr('action', '/admin/manage/users/' + rowData[0])
             $('#idInput').val(userId);
             $('#nameInput').val(rowData[1]);
@@ -77,11 +75,35 @@ $(document).ready(function () {
         }
         $('#modalEditUser').modal('show');
     });
+    $('#updateUserForm').submit(function (event) {
+        event.preventDefault();
+        userId = $('#idInput').val();
+        let formData = new FormData(this);
+        $.ajax({
+            url: "/admin/users/" + userId,
+            method: "post",
+            contentType: false,
+            processData: false,
+            data: formData,
+            success: function (response) {
+                toastr.success(response.message)
+                setTimeout(function () {
+                    location.reload(true);
+                }, 1000);
+            },
+            error: function (response) {
+                let error = $.map(response.responseJSON.errors, function (value, index) {
+                    return [value];
+                });
+                toastr.error(error);
+            }
+        });
+    })
 
     // Delete user onclick button
     tbody.on('click', 'button[name=delete]', function () {
         let userId = this.value;
-        $('#deleteUserForm').attr('action', $('#hiddenUserDeleteActionInput').val()+"/"+userId);
+        $('#deleteUserForm').attr('action', $('#hiddenUserDeleteActionInput').val() + "/" + userId);
         $('#modalDeleteUser').modal('show');
     });
 
@@ -91,10 +113,11 @@ $(document).ready(function () {
         $('#hiddenAddDepartmentsToUserInput').val(userId);
         //deselect all rows
         manageUserDepartments.rows().deselect();
-        $.get("/admin/users/"+userId+"/departments", function (data) {
+        $.get("/admin/users/" + userId + "/departments", function (data) {
             $(data[0]).each(function (index, value) {
                 let row = manageUserDepartments.row('#' + value).select();
             });
+            manageUserDepartments.order([3,'desc']).draw();
         });
         $('#modalAddUserToDepartment').modal('show');
     });
@@ -108,16 +131,19 @@ $(document).ready(function () {
             form.push(value[0]);
         });
         $.ajax({
-            url: "/admin/users/"+userId+"/departments",
+            url: "/admin/users/" + userId + "/departments",
             method: "POST",
             dataType: "json",
             data: JSON.stringify(form),
-            success:function(response) {
+            success: function (response) {
                 $('#modalAddUserToDepartment').modal('hide');
-                toastr.success(response)
+                toastr.success(response.message)
             },
-            error:function (data){
-                toastr.error();
+            error: function (response) {
+                let error = $.map(response.responseJSON.errors, function(value, index){
+                    return [value];
+                });
+                toastr.error(error);
             }
         });
     });

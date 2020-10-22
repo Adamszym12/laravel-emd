@@ -58,12 +58,4 @@
     </div>
 @endsection
 @push('scripts')
-    <script>
-        $('#profileImage').on('change',function(){
-            //get the file name
-            let fileName = $(this).val();
-            //replace the "Choose a file" label
-            $(this).next('.custom-file-label').html(fileName);
-        })
-    </script>
 @endpush

@@ -4,7 +4,6 @@
 @section('title', 'Manage departments')
 @section('content')
     <div class="card">
-        {{old('id')}}
         <!-- /.card-header -->
         <div class="card-body">
             <div class="table-responsive">
@@ -14,6 +13,7 @@
                         <th>Id</th>
                         <th>Name</th>
                         <th>Description</th>
+                        <th>Employees</th>
                         <th></th>
                     </tr>
                     </thead>
@@ -23,8 +23,9 @@
                             <td>{{$department->id}}</td>
                             <td>{{$department->name}}</td>
                             <td>{{$department->description}}</td>
+                            <td>{{count($department->users)}}</td>
                             <td>
-                                <div class="row  justify-content-around">
+                                <div class="d-flex justify-content-center">
                                     <button class="btn" value="{{$department->id}}" name="edit" type="button"><i
                                             class="fas fa-edit"></i></button>
                                     <button class="btn" value="{{$department->id}}" name="addUser" type="button"><i
@@ -41,6 +42,7 @@
                         <th></th>
                         <th>Name</th>
                         <th>Description</th>
+                        <th>Employees</th>
                         <th></th>
                     </tr>
                     </tfoot>
@@ -91,8 +93,6 @@
                 <form id="updateDepartmentForm" method="POST">
                     @csrf
                     @method('PUT')
-                    <input value="{{route('departments.update', '')}}" type="hidden"
-                           id="hiddenDepartmentUpdateActionInput">
                     <div class="modal-body">
                         <div class="form-group">
                             <input type="hidden" id="idInput"  name="id" value="{{old('id')}}">

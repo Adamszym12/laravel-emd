@@ -46,7 +46,6 @@ class DepartmentController extends Controller
         return redirect()->back()->with(['status' => 'Department created successfully.']);
     }
 
-
     /**
      * Display the specified resource.
      *
@@ -59,35 +58,11 @@ class DepartmentController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param DepartmentRequest $request
-     * @param Department $department
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function update(DepartmentRequest $request,Department $department)
-    {
-        $department->fill($request->all());
-        $department->save();
-        return redirect()->back()->with(['status' => 'Department updated successfully.']);
-    }
-
-    /**
      * Remove the specified resource from storage.
      *
      * @param $department
      * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
      */
     public function destroy(Department $department)
     {

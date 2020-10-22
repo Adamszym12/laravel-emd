@@ -13,7 +13,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('css/adminlte.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/adminlte.css') }}">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700">
     <!-- Toastr -->
@@ -25,7 +24,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="{{route('users.profile.edit', Auth::user()->id )}}" class="brand-link">
+            <a href="{{route('users.profile.edit')}}" class="brand-link">
                 <img src="{{asset('/img/AdminLTELogo.png')}}" alt="AdminLTE Logo"
                      class="brand-image img-circle elevation-3"
                      style="opacity: .8">
@@ -40,7 +39,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <img src="{{asset(Auth::user()->profile_picture)}}" class="img-fluid" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="{{route('users.profile.edit', Auth::user()->id )}}" class="d-block">{{ Auth::user()->name }} {{ Auth::user()->surname }}</a>
+                        <a href="{{route('users.profile.edit')}}" class="d-block">{{ Auth::user()->name }} {{ Auth::user()->surname }}</a>
                     </div>
                     @endauth
                 </div>
@@ -101,7 +100,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         @foreach(Auth::user()->departments as $department)
                             <li class="nav-item">
                                 <a href="{{route('departments.show', $department->id)}}"
-                                   class="nav-link {{ (request()->routeIs(route('departments.show', $department->id))) ? 'active' : '' }}">
+                                   class="nav-link {{ (request()->routeIs('departments.show', '15')) ? 'active' : '' }}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>
                                         {{$department->name}}
@@ -147,19 +146,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
                 @endif
                 <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">@yield('pageName')</h1>
-                        </div><!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                @if(Request::path()!='/')
-                                    <li class="breadcrumb-item"><a href="/{{Request::path()}}">{{basename(Request::path())}}</a></li>
-                                    @endif
-                            </ol>
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
+                    {{ Breadcrumbs::render('admin/departments') }}
                 </div><!-- /.container-fluid -->
             </div>
             <!-- /.content-header -->
@@ -209,6 +196,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ asset('js/statusHandler.js') }}"></script>
 <!-- Toastr -->
 <script src="{{ asset('plugins/toastr/toastr.min.js') }}"></script>
+<script>
+    $('#profileImage').on('change',function(){
+        //get the file name
+        let fileName = $(this).val();
+        //replace the "Choose a file" label
+        $(this).next('.custom-file-label').html(fileName);
+    })
+</script>
 @stack('scripts')
 </body>
 

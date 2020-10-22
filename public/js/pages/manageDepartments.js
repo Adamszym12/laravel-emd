@@ -1,11 +1,15 @@
 $(document).ready(function () {
-
     // Setup csrf token
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+    $.fn.dataTable.ext.order['dom-checkbox'] = function (settings, col) {
+        return this.api().column(col, {order: 'index'}).nodes().map(function (td, i) {
+            return $(td).closest('tr').hasClass('selected') ? '1' : '0';
+        });
+    }
     let manageDepartmentsTable = $('#manageDepartmentsTable').DataTable({
         "paging": true,
         "lengthChange": true,
@@ -17,12 +21,13 @@ $(document).ready(function () {
         "columns": [
             {"width": "0%"},
             {"width": "30%"},
-            {"width": "57%"},
-            {"width": "13%"},
+            {"width": "60%"},
+            {"width": "0%"},
+            {"width": "10%"},
         ],
         "columnDefs": [
             {
-                "targets": 3,
+                "targets": 4,
                 "className": 'dt-body-center',
                 "orderable": false,
             },
@@ -41,13 +46,9 @@ $(document).ready(function () {
         "columnDefs": [
             {
                 "className": 'select-checkbox',
-                "orderable": false,
-                "targets": [6]
+                "targets": [6],
+                "orderDataType": 'dom-checkbox'
             },
-            {
-                "targets": [0],
-                "visible": false
-            }
         ],
         select: {
             style: 'multi',
@@ -81,6 +82,32 @@ $(document).ready(function () {
         $('#modalEditDepartment').modal('show');
 
     });
+    $('#updateDepartmentForm').submit(function (event) {
+        event.preventDefault();
+        departmentId = $('#idInput').val();
+        name =  $('#nameInput').val();
+        description = $('#descriptionInput').val();
+        $.ajax({
+            url: "/admin/departments/" + departmentId,
+            method: "PUT",
+            data: {
+                name: name,
+                description: description
+            },
+            success: function (response) {
+                toastr.success(response.message)
+                setTimeout(function(){
+                    location.reload(true);
+                }, 1000);
+            },
+            error: function (response) {
+                let error = $.map(response.responseJSON.errors, function(value, index){
+                    return [value];
+                });
+                toastr.error(error);
+            }
+        });
+    })
 
     // Add user on click button
     tbody.on('click', 'button[name=addUser]', function () {
@@ -91,6 +118,7 @@ $(document).ready(function () {
             $(data[0]).each(function (index, value) {
                 let row = manageDepartmentUsers.row('#' + value).select();
             });
+            manageDepartmentUsers.order([6,'desc']).draw();
         });
         $('#modalAddUserToDepartment').modal('show');
     });
@@ -108,12 +136,15 @@ $(document).ready(function () {
             method: "POST",
             dataType: "json",
             data: JSON.stringify(form),
-            success: function () {
+            success: function (response) {
                 $('#modalAddUserToDepartment').modal('hide');
-                toastr.success("Action has been done successfully")
+                toastr.success(response.message)
             },
-            error: function (data) {
-                toastr.error();
+            error: function (response) {
+                let error = $.map(response.responseJSON.errors, function(value, index){
+                    return [value];
+                });
+                toastr.error(error);
             }
         });
     });
