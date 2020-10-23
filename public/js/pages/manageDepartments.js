@@ -52,7 +52,7 @@ $(document).ready(function () {
         ],
         select: {
             style: 'multi',
-            selector: 'td:nth-child(6)'
+            selector: 'td:nth-child(7)'
         },
         order: [[1, 'asc']]
 

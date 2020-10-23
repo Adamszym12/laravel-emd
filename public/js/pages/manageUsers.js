@@ -53,7 +53,7 @@ $(document).ready(function () {
         ],
         select: {
             style: 'multi',
-            selector: 'td:nth-child(3)'
+            selector: 'td:nth-child(4)'
         },
     });
 

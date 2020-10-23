@@ -23,139 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2226954e-98b3-4e6b-abf9-8f25d8e3e48c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/new-age.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/new-age.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/app-store-badge.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/bg-cta.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/bg-pattern.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/demo-screen-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/google-play-badge.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/new-age.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/new-age.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/bootstrap/css/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/bootstrap/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/bootstrap/css/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/bootstrap/js/bootstrap.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/apple_watch/edition/gold.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/apple_watch/edition/rose.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/apple_watch/sport/black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/apple_watch/sport/blue.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/apple_watch/sport/green.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/apple_watch/sport/red.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/apple_watch/sport/white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/apple_watch/watch/metal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/apple_watch/watch/steel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/device-mockups.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/device-mockups.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/device-mockups2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/device-mockups2.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/galaxy_s3/s3_land_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/galaxy_s3/s3_land_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/galaxy_s3/s3_port_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/galaxy_s3/s3_port_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/galaxy_s5/galaxy_s5_land_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/galaxy_s5/galaxy_s5_land_gold.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/galaxy_s5/galaxy_s5_land_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/galaxy_s5/galaxy_s5_port_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/galaxy_s5/galaxy_s5_port_gold.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/galaxy_s5/galaxy_s5_port_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/galaxy_tab4/galaxy_tab4_land_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/galaxy_tab4/galaxy_tab4_land_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/galaxy_tab4_small/galaxy_tab4_black_small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/galaxy_tab4_small/galaxy_tab4_white_small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/imac/imac.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/ipad/ipad_land_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/ipad/ipad_land_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/ipad/ipad_port_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/ipad/ipad_port_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/ipad_air/ipad_air_gray_land.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/ipad_air/ipad_air_gray_port.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/ipad_air/ipad_air_silver_land.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/ipad_air/ipad_air_silver_port.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/ipad_air_2/ipad_air_2_gold_land.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/ipad_air_2/ipad_air_2_gold_port.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/ipad_air_2/ipad_air_2_gray_land.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/ipad_air_2/ipad_air_2_gray_port.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/ipad_air_2/ipad_air_2_silver_land.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/ipad_air_2/ipad_air_2_silver_port.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/ipad_pro/ipad_pro_land_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/ipad_pro/ipad_pro_land_gold.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/ipad_pro/ipad_pro_land_silver.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/ipad_pro/ipad_pro_port_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/ipad_pro/ipad_pro_port_gold.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/ipad_pro/ipad_pro_port_silver.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone5/iphone5_land_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone5/iphone5_land_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone5/iphone5_port_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone5/iphone5_port_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_6/iphone_6_land_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_6/iphone_6_land_gold.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_6/iphone_6_land_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_6/iphone_6_port_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_6/iphone_6_port_gold.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_6/iphone_6_port_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_6_plus/iphone_6_plus_black_land.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_6_plus/iphone_6_plus_black_port.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_6_plus/iphone_6_plus_gold_land.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_6_plus/iphone_6_plus_gold_port.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_6_plus/iphone_6_plus_white_land.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_6_plus/iphone_6_plus_white_port.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_se/iphone_se_land_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_se/iphone_se_land_gold.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_se/iphone_se_land_rose.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_se/iphone_se_land_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_se/iphone_se_port_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_se/iphone_se_port_gold.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_se/iphone_se_port_rose.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_se/iphone_se_port_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_x/iphone_x_black_land.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_x/iphone_x_black_port.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_x/iphone_x_white_land.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/iphone_x/iphone_x_white_port.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/lumia920/lumia920_land.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/lumia920/lumia920_port.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/lumia_930/lumia_930_dark_land.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/lumia_930/lumia_930_dark_port.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/lumia_930/lumia_930_light_land.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/lumia_930/lumia_930_light_port.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/macbook/macbook.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/macbook_2015/gold.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/macbook_2015/grey.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/macbook_2015/silver.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/nexus7/nexus7_land.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/nexus7/nexus7_port.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/nexus_6/nexus_6_land.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/nexus_6/nexus_6_port.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/samsung_tv/samsung_tv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/device-mockups/surface/surface.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/jquery-easing/jquery.easing.compatibility.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/jquery-easing/jquery.easing.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/jquery-easing/jquery.easing.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/simple-line-icons/css/simple-line-icons.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/simple-line-icons/fonts/Simple-Line-Icons.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/simple-line-icons/fonts/Simple-Line-Icons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/simple-line-icons/fonts/Simple-Line-Icons.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/simple-line-icons/fonts/Simple-Line-Icons.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/plugins/simple-line-icons/fonts/Simple-Line-Icons.woff2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/pages/manageDepartments.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pages/manageDepartments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/pages/manageUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/pages/manageUsers.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -358,7 +228,7 @@
       <workItem from="1603284796698" duration="9581000" />
       <workItem from="1603350852678" duration="20908000" />
       <workItem from="1603375761787" duration="2809000" />
-      <workItem from="1603436379820" duration="1561000" />
+      <workItem from="1603436379820" duration="3285000" />
     </task>
     <servers />
   </component>
