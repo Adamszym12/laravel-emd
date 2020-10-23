@@ -19,14 +19,13 @@ class Page extends Model
     public function update(array $attributes = [], array $options = [])
     {
         $count = [];
-        foreach ($attributes as $section) {
+        foreach ($attributes as $attributeKey => $section) {
             if (array_key_exists('images', $section)){
-                foreach ($section['images'] as $image) {
-                    $asd = "/storage/avatars/".basename(Storage::disk('local')->putFile('/public/home_images', $image));
-                    array_push($count, $image);
+                foreach ($section['images'] as $sectionKey => $image) {
+                    $attributes[$attributeKey]['images'][$sectionKey] = "/storage/home_images/".basename(Storage::disk('local')->putFile('/public/home_images', $image));
                 }
             }
-            return $count;
+            return $attributes;
         }
     }
 
