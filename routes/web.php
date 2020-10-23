@@ -23,9 +23,9 @@ Route::group(['middleware' => ['role:admin|user']], function () {
     Route::get('/profile', [UserProfileController::class, 'edit'])->name('users.profile.edit')->middleware('auth');
     Route::put('/profile/{user}', [UserController::class, 'update'])->name('users.profile.update')->middleware('can:update,user');
     Route::get('/departments/{department}', [DepartmentController::class, 'show'])->name('departments.show')->middleware('can:show,department');
-    Route::redirect('/home', '/admin/users')->name('home');
-    //temporary
-    Route::redirect('/', '/admin/users');
+    Route::get('/', function(){
+        return view('home');
+    })->name('home');
 });
 //Admin
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {
