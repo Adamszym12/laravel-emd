@@ -1,7 +1,8 @@
 <?php
-
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\DepartmentController;
+use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\Ajax\UserController as AjaxUserController;
 use App\Http\Controllers\Admin\Ajax\DepartmentController as AjaxDepartmentController;
 use App\Http\Controllers\UserProfileController;
@@ -18,34 +19,51 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
 // Admin/user
-Route::group(['middleware' => ['role:admin|user']], function () {
-    Route::get('/profile', [UserProfileController::class, 'edit'])->name('users.profile.edit')->middleware('auth');
-    Route::put('/profile/{user}', [UserController::class, 'update'])->name('users.profile.update')->middleware('can:update,user');
+Route::group(['middleware' => ['auth', 'role:admin|user']], function () {
+    Route::get('/profile', [UserProfileController::class, 'edit'])->name('users.profile.edit');
+    Route::post('/profile', [UserProfileController::class, 'update'])->name('users.profile.update');
     Route::get('/departments/{department}', [DepartmentController::class, 'show'])->name('departments.show')->middleware('can:show,department');
-    Route::get('/', function(){
-        return view('home');
-    })->name('home');
 });
 //Admin
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {
+    // admin dashboard redirection
+    Route::get('/', function () {
+        return redirect()->route('users.index');
+    })->name('admin');
+    //home
+    Route::group(['prefix' => 'home'], function () {
+    Route::get('/', [AdminHomeController::class, 'index'])->name('home.index');
+    });
     //user
-    Route::get('/users', [UserController::class, 'index'])->name('users.index');
-    Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
-    Route::post('/users', [UserController::class, 'store'])->name('users.store');
-    Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+    Route::group(['prefix' => 'users'], function () {
+        Route::get('/', [UserController::class, 'index'])->name('users.index');
+        Route::get('/create', [UserController::class, 'create'])->name('users.create');
+        Route::post('', [UserController::class, 'store'])->name('users.store');
+        Route::delete('/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+    });
     //department
-    Route::get('/departments', [DepartmentController::class, 'index'])->name('departments.index');
-    Route::get('/departments/create', [DepartmentController::class, 'create'])->name('departments.create');
-    Route::post('departments', [DepartmentController::class, 'store'])->name('departments.store');
-    Route::delete('departments/{department}', [DepartmentController::class, 'destroy'])->name('departments.destroy');
-
-    //Ajax user
-    Route::get('/users/{user}/departments', [AjaxUserController::class, 'index'])->name('ajax.departments.index');
-    Route::post('/users/{user}/departments', [AjaxUserController::class, 'store'])->name('ajax.departments.store');
-    Route::post('/users/{user}', [AjaxUserController::class, 'update'])->name('ajax.users.update');
-    //Ajax department
-    Route::get('/departments/{department}/users', [AjaxDepartmentController::class, 'index'])->name('ajax.users.index');
-    Route::post('/departments/{department}/users', [AjaxDepartmentController::class, 'store'])->name('ajax.users.store');
-    Route::put('departments/{department}', [AjaxDepartmentController::class, 'update'])->name('ajax.departments.update');
+    Route::group(['prefix' => 'departments'], function () {
+        Route::get('/', [DepartmentController::class, 'index'])->name('departments.index');
+        Route::get('/create', [DepartmentController::class, 'create'])->name('departments.create');
+        Route::post('', [DepartmentController::class, 'store'])->name('departments.store');
+        Route::delete('/{department}', [DepartmentController::class, 'destroy'])->name('departments.destroy');
+    });
+});
+//Ajax
+Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {
+    Route::group(['prefix' => 'users'], function () {
+        //Ajax user
+        Route::get('/{user}/departments', [AjaxUserController::class, 'index'])->name('ajax.departments.index');
+        Route::post('/{user}/departments', [AjaxUserController::class, 'store'])->name('ajax.departments.store');
+        Route::post('/{user}', [AjaxUserController::class, 'update'])->name('ajax.users.update');
+    });
+    Route::group(['prefix' => 'departments'], function () {
+        //Ajax department
+        Route::get('/{department}/users', [AjaxDepartmentController::class, 'index'])->name('ajax.users.index');
+        Route::post('/{department}/users', [AjaxDepartmentController::class, 'store'])->name('ajax.users.store');
+        Route::put('/{department}', [AjaxDepartmentController::class, 'update'])->name('ajax.departments.update');
+    });
 });

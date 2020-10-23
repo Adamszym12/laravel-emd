@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin\Ajax;
 
 
 use App\Http\Requests\DepartmentRequest;
-use http\Env\Response;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

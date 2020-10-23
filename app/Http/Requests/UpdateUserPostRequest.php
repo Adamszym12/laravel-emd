@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class UpdateUserPostRequest extends FormRequest
 {
@@ -23,10 +24,11 @@ class UpdateUserPostRequest extends FormRequest
      */
     public function rules()
     {
+        $user = $this->route('user') ?? Auth::user();
         return [
             'name' => 'required',
             'surname' => 'required',
-            'email' => 'required|unique:users,email,'.$this->route('user')->id.'id',
+            'email' => 'required|unique:users,email,'.$user->id.'id',
             'phone' => 'required',
             'profileImage' => 'sometimes|nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ];

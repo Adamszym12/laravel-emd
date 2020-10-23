@@ -16,9 +16,9 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        $departments = Department::all();
         $users = User::all();
-        return view('admin.manage_departments', compact(['departments','users']));
+        $departments = Department::with('users')->get();
+        return view('admin.manage_departments', compact(['users', 'departments']));
     }
 
     /**

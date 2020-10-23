@@ -21,7 +21,7 @@ class UserController extends Controller
     {
         $users = User::all();
         $departments = Department::all();
-        return view('admin.manage_users', compact('users', 'departments'));
+        return view('admin.manage_users', compact(['users', 'departments']));
     }
 
     /**
@@ -52,17 +52,6 @@ class UserController extends Controller
         // Persist user record to database
         $user->save();
         return redirect()->back()->with(['status' => 'User created successfully.']);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param User $user
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
-     */
-    public function show(User $user)
-    {
-        return view('user_profile', compact('user'));
     }
 
     /**

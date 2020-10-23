@@ -6,15 +6,21 @@ use Diglactic\Breadcrumbs\Breadcrumbs;
 Breadcrumbs::for('home', function ($trail) {
     $trail->push('Home', route('home'));
 });
+
+Breadcrumbs::for('admin', function ($trail) {
+    $trail -> parent('home');
+    $trail->push('Admin', route('admin'));
+});
+
 // Home > Admin > Departments (manage)
 Breadcrumbs::for('departments.index', function($trail){
- $trail -> parent('home');
+ $trail -> parent('admin');
  $trail->push('departments', route('departments.index'));
 });
 
 // Home > Admin > Users (manage)
 Breadcrumbs::for('users.index', function($trail){
- $trail -> parent('home');
+ $trail -> parent('admin');
  $trail->push('users', route('users.index'));
 });
 

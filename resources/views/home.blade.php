@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{{asset('plugins/device-mockups/device-mockups.min.css')}}">
 
     <!-- Custom styles for this template -->
-    <link href="css/new-age.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('css/new-age.min.css')}}">
 
 </head>
 
@@ -220,8 +220,9 @@
 <!-- Plugin JavaScript -->
 <script src="{{ asset('plugins/jquery-easing/jquery.easing.min.js') }}"></script>
 
+
 <!-- Custom scripts for this template -->
-<script src="js/new-age.min.js"></script>
+<script src="{{ asset('js/new-age.min.js') }}"></script>
 
 </body>
 

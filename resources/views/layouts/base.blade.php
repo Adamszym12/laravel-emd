@@ -24,7 +24,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="{{route('users.profile.edit')}}" class="brand-link">
+            <a href="{{route('home')}}" class="brand-link">
                 <img src="{{asset('/img/AdminLTELogo.png')}}" alt="AdminLTE Logo"
                      class="brand-image img-circle elevation-3"
                      style="opacity: .8">
@@ -86,6 +86,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{route('users.index')}}"
+                                       class="nav-link {{ (request()->is('admin/manage/users')) ? 'active' : '' }}">
+                                        <i class="nav-icon fas fa-users-cog"></i>
+                                        <p>
+                                            Manage users
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('users')}}"
                                        class="nav-link {{ (request()->is('admin/manage/users')) ? 'active' : '' }}">
                                         <i class="nav-icon fas fa-users-cog"></i>
                                         <p>

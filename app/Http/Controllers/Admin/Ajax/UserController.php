@@ -18,7 +18,7 @@ class UserController extends Controller
     public function index(User $user)
     {
         $departments = $user->departments->pluck('id');
-        return response()->json([$departments->all()]);
+        return response()->json([$departments]);
     }
 
     /**

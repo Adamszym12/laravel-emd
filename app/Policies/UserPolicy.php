@@ -19,11 +19,4 @@ class UserPolicy
     {
         //
     }
-    public function update($currentUser,$user)
-    {
-        if($currentUser->hasRole('admin')||$currentUser->id == $user->id){
-            return true;
-        }
-        return false;
-    }
 }
