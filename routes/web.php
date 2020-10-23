@@ -2,7 +2,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\DepartmentController;
-use App\Http\Controllers\Admin\HomeController as AdminHomeController;
+use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\Ajax\UserController as AjaxUserController;
 use App\Http\Controllers\Admin\Ajax\DepartmentController as AjaxDepartmentController;
 use App\Http\Controllers\UserProfileController;
@@ -34,8 +34,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () 
         return redirect()->route('users.index');
     })->name('admin');
     //home
-    Route::group(['prefix' => 'home'], function () {
-    Route::get('/', [AdminHomeController::class, 'index'])->name('home.index');
+    Route::group(['prefix' => 'pages'], function () {
+    Route::get('/{page}/edit', [PageController::class, 'edit'])->name('pages.edit');
+    Route::post('/{page}', [PageController::class, 'update'])->name('pages.update');
     });
     //user
     Route::group(['prefix' => 'users'], function () {

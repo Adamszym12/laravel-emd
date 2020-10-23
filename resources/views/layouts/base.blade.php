@@ -94,11 +94,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('users')}}"
+                                    <a href="{{route('pages.edit', '1')}}"
                                        class="nav-link {{ (request()->is('admin/manage/users')) ? 'active' : '' }}">
                                         <i class="nav-icon fas fa-users-cog"></i>
                                         <p>
-                                            Manage users
+                                            Main page
                                         </p>
                                     </a>
                                 </li>
