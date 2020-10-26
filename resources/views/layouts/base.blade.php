@@ -206,7 +206,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- Toastr -->
 <script src="{{ asset('plugins/toastr/toastr.min.js') }}"></script>
 <script>
-    $('#profileImage').on('change',function(){
+    $('input:file').on('change',function(){
         //get the file name
         let fileName = $(this).val();
         //replace the "Choose a file" label

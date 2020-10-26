@@ -42,8 +42,8 @@
         <div class="row h-100">
             <div class="col-lg-7 my-auto">
                 <div class="header-content mx-auto">
-                    <h1 class="mb-5">New Age is an app landing page that will help you beautifully showcase your new mobile app, or anything else!</h1>
-                    <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Start Now for Free!</a>
+                    <h1 class="mb-5">{{$content->section1->headers->header1}}</h1>
+                    <a href="#" class="btn btn-outline btn-xl js-scroll-trigger">{{$content->section1->buttons->button1}}</a>
                 </div>
             </div>
             <div class="col-lg-5 my-auto">
@@ -52,7 +52,7 @@
                         <div class="device">
                             <div class="screen">
                                 <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                <img src="img/demo-screen-1.jpg" class="img-fluid" alt="">
+                                <img src="{{asset($content->section1->images->phone_image1)}}" style="height:100%; width: 100%; object-fit: cover;" class="img-responsive" alt="">
                             </div>
                             <div class="button">
                                 <!-- You can hook the "home button" to some JavaScript events or just remove it -->
@@ -69,8 +69,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2 class="section-heading">Discover what all the buzz is about!</h2>
-                <p>Our app is available on any mobile device! Download now to get started!</p>
+                <h2 class="section-heading">{{$content->section2->headers->header1}}</h2>
+                <p>{{$content->section2->paragraphs->paragraph1}}</p>
                 <div class="badges">
                     <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
                     <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
@@ -83,8 +83,8 @@
 <section class="features" id="features">
     <div class="container">
         <div class="section-heading text-center">
-            <h2>Unlimited Features, Unlimited Fun</h2>
-            <p class="text-muted">Check out what you can do with this app theme!</p>
+            <h2>{{$content->section3->headers->header1}}</h2>
+            <p class="text-muted">{{$content->section3->paragraphs->paragraph1}}</p>
             <hr>
         </div>
         <div class="row">
@@ -94,7 +94,7 @@
                         <div class="device">
                             <div class="screen">
                                 <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                <img src="img/demo-screen-1.jpg" class="img-fluid" alt="">
+                                <img src="{{asset($content->section3->images->phone_image1)}}"  style="height:100%; width: 100%; object-fit: cover;" class="img-responsive" alt="">
                             </div>
                             <div class="button">
                                 <!-- You can hook the "home button" to some JavaScript events or just remove it -->
@@ -109,15 +109,15 @@
                         <div class="col-lg-6">
                             <div class="feature-item">
                                 <i class="icon-screen-smartphone text-primary"></i>
-                                <h3>Device Mockups</h3>
-                                <p class="text-muted">Ready to use HTML/CSS device mockups, no Photoshop required!</p>
+                                <h3>{{$content->section3->headers->header2}}</h3>
+                                <p class="text-muted">{{$content->section3->paragraphs->paragraph2}}</p>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="feature-item">
                                 <i class="icon-camera text-primary"></i>
-                                <h3>Flexible Use</h3>
-                                <p class="text-muted">Put an image, video, animation, or anything else in the screen!</p>
+                                <h3>{{$content->section3->headers->header3}}</h3>
+                                <p class="text-muted">{{$content->section3->paragraphs->paragraph3}}</p>
                             </div>
                         </div>
                     </div>
@@ -125,15 +125,15 @@
                         <div class="col-lg-6">
                             <div class="feature-item">
                                 <i class="icon-present text-primary"></i>
-                                <h3>Free to Use</h3>
-                                <p class="text-muted">As always, this theme is free to download and use for any purpose!</p>
+                                <h3>{{$content->section3->headers->header4}}</h3>
+                                <p class="text-muted">{{$content->section3->paragraphs->paragraph4}}</p>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="feature-item">
                                 <i class="icon-lock-open text-primary"></i>
-                                <h3>Open Source</h3>
-                                <p class="text-muted">Since this theme is MIT licensed, you can use it commercially!</p>
+                                <h3>{{$content->section3->headers->header5}}</h3>
+                                <p class="text-muted">{{$content->section3->paragraphs->paragraph5}}</p>
                             </div>
                         </div>
                     </div>
@@ -146,7 +146,7 @@
 <section class="cta">
     <div class="cta-content">
         <div class="container">
-            <h2>Stop waiting.<br>Start building.</h2>
+            <h2>{{$content->section1->headers->header1}}</h2>
             <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
         </div>
     </div>
@@ -155,9 +155,7 @@
 
 <section class="contact bg-primary" id="contact">
     <div class="container">
-        <h2>We
-            <i class="fas fa-heart"></i>
-            new friends!</h2>
+        <h2><i class="fas fa-heart"></i>{{$content->section1->headers->header1}}</h2>
         <ul class="list-inline list-social">
             <li class="list-inline-item social-twitter">
                 <a href="#">

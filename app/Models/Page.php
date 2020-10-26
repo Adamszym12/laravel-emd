@@ -15,16 +15,25 @@ class Page extends Model
         'content',
     ];
 
-    public function update(array $attributes = [], array $options = [])
+    public function updatePage(array $attributes = [])
     {
+        $newImagesArray = [];
+        $currentContent = json_decode($this->content);
         foreach ($attributes as $attributeKey => $section) {
-            if (array_key_exists('images', $section)){
+            if (array_key_exists('images', $section)) {
                 foreach ($section['images'] as $sectionKey => $image) {
-                    $attributes[$attributeKey]['images'][$sectionKey] = "/storage/home_images/".basename(Storage::disk('local')->putFile('/public/home_images', $image));
+                    //delete images
+                    Storage::disk()->delete('public/home_images/'. basename($currentContent->$attributeKey->images->$sectionKey));
+                    $attributes[$attributeKey]['images'][$sectionKey] = "/storage/home_images/" . basename(Storage::disk('local')->putFile('/public/home_images', $image));
                 }
             }
         }
-        $this->content = json_encode($attributes);
+        $this->content = json_encode(array_replace_recursive(json_decode($this->content, true), $attributes));
+    }
+
+    public function getContent()
+    {
+        return json_decode($this->content);
     }
 
 
