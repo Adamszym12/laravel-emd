@@ -50,7 +50,7 @@
                         <label for="section1_background_image">Image</label>
                         <div class="input-group">
                             <div class="custom-file">
-                                <input name="section1[images][backgroundImage]" type="file" class="custom-file-input"
+                                <input name="section1[images][background_image]" type="file" class="custom-file-input"
                                        id="section1_phone_image">
                                 <label class="custom-file-label" for="section1_background_image">Choose file</label>
                             </div>

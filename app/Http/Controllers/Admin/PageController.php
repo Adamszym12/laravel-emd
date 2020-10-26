@@ -15,8 +15,8 @@ class PageController
     }
 
     public function update(UpdatePagePostRequest $request,Page $page){
-        $asd = $page->update($request->validated());
-        dd(($asd));
+        $page->update($request->validated());
+        $page->save();
         return redirect()->back()->with(['status' => 'Home created successfully.']);
     }
 }
