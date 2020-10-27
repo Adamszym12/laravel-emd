@@ -155,7 +155,7 @@
                                         placeholder="Enter ...">{{old('section3.paragraphs.paragraph3') ?? $content->section3->paragraphs->paragraph3}}</textarea>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-5">
                                 <div class="form-group col-sm-6">
                                     <label>Icon</label>
                                     <input value="{{old('section3.icons.icon3') ?? $content->section3->icons->icon3}}"
