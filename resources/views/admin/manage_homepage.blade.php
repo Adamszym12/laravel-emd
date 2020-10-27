@@ -129,14 +129,13 @@
                             </div>
                         </div>
                         <div class="form-group col-sm-4">
-                            <label for="section2_icon_image1">Image</label>
-                            <div class="input-group">
-                                <div class="custom-file">
-                                    <input name="section3[images][icon_image1]" type="file"
-                                           class="custom-file-input" id="section2_icon_image1">
-                                    <label class="custom-file-label" for="section2_icon_image1">Choose
-                                        file</label>
-                                </div>
+                            <div class="form-group">
+                                <label>Icon</label>
+                                <input class="form-control icp icp-auto" value="fas fa-anchor" type="text"/>
+                            </div>
+                            <div class="panel-footer">
+
+                                <button class="btn btn-default action-create">Create instances</button>
                             </div>
                         </div>
                         <div class="form-group col-sm-4">
@@ -303,6 +302,11 @@
     </form>
 @endsection
 @push('scripts')
+    <script src="{{asset('js/pages/manageHomepage.js')}}"></script>fontawesome-iconpicker.css
+    <!-- Font Awesome Picker -->
+    <script src="{{asset('plugins/fontawesome-iconpicker/js/fontawesome-iconpicker.js')}}"></script>
 @endpush
 @push('stylesheets')
+    <!-- Font Awesome Picker -->
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-iconpicker/css/fontawesome-iconpicker.css') }}">
 @endpush
