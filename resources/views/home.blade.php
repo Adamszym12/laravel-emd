@@ -146,7 +146,7 @@
     <div class="cta-content">
         <div class="container">
             <h2>{{$content->section4->headers->header1}}</h2>
-            <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
+            <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">{{$content->section4->buttons->button1}}</a>
         </div>
     </div>
     <div class="overlay"></div>
