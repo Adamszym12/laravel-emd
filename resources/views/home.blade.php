@@ -145,7 +145,7 @@
 <section class="cta">
     <div class="cta-content">
         <div class="container">
-            <h2>{{$content->section1->headers->header1}}</h2>
+            <h2>{{$content->section4->headers->header1}}</h2>
             <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
         </div>
     </div>
@@ -154,7 +154,7 @@
 
 <section class="contact bg-primary" id="contact">
     <div class="container">
-        <h2><i class="fas fa-heart"></i>{{$content->section1->headers->header1}}</h2>
+        <h2>{{$content->section5->headers->header1}} <i class="{{$content->section5->icons->icon1}}"></i> {{$content->section5->headers->header2}}</h2>
         <ul class="list-inline list-social">
             <li class="list-inline-item social-twitter">
                 <a href="#">

@@ -174,18 +174,7 @@
     <!-- /.modal -->
 @endsection
 @push('scripts')
-    <!-- DataTables -->
-    <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
-    <script src="{{ asset('plugins/datatables-select/js/dataTables.select.min.js') }}"></script>
-    <script src="{{ asset('js/pages/manageDepartments.js') }}"></script>
-
 @endpush
 @push('stylesheets')
-    <!-- DataTables -->
-    <link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
-    <link rel="stylesheet" href="{{asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
-    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css">
-
 @endpush
 

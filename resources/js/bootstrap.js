@@ -26,3 +26,12 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+//packages
+// require('datatables.net');
+// require('datatables.net-bs4');
+require('./adminlte');
+require('./pages/manageDepartments');
+require('./pages/manageUsers');
+require('./statusHandler');
+
+
