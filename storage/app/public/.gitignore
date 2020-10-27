@@ -5,6 +5,7 @@
 !.gitignore
 !admin.png
 !user.png
+!phone.jpeg
 
 # ...even if they are in subdirectories
 !*/

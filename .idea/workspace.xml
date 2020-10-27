@@ -23,26 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2226954e-98b3-4e6b-abf9-8f25d8e3e48c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/css/adminlte.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/adminlte.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/pages/manageDepartments.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/manageDepartments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/pages/manageHomepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/manageHomepage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/pages/manageUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/manageUsers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/statusHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/statusHandler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/manage_departments.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/manage_departments.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/manage_homepage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/manage_homepage.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/manage_users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/manage_users.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/storage/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/public/storage/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
