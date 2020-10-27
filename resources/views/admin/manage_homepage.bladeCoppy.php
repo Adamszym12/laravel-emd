@@ -131,13 +131,22 @@
                         <div class="form-group col-sm-4">
                             <div class="form-group">
                                 <label>Icon</label>
-                                <input value="{{old('section3.icons.icon1') ?? $content->section3->icons->icon1}}"  id="icon1" name="section3[icons][icon1]" class="icon-picker form-control" type="text" data-iconpicker-input="#icon1">
+                                <input class="form-control icp icp-auto" value="fas fa-anchor" type="text"/>
+                            </div>
+                            <div class="panel-footer">
+
+                                <button class="btn btn-default action-create">Create instances</button>
                             </div>
                         </div>
                         <div class="form-group col-sm-4">
-                            <div class="form-group">
-                                <label>Icon</label>
-                                <input value="{{old('section3.icons.icon2') ?? $content->section3->icons->icon2}}"   id="icon2" name="section3[icons][icon2]" class="icon-picker form-control" type="text" data-iconpicker-input="#icon2">
+                            <label for="section2_icon_image2">Image</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input name="section3[images][icon_image2]" type="file"
+                                           class="custom-file-input" id="section2_icon_image2">
+                                    <label class="custom-file-label" for="section2_icon_image2">Choose
+                                        file</label>
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-8 offset-sm-4">
@@ -171,12 +180,26 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-sm-6">
-                                    <label>Icon</label>
-                                    <input value="{{old('section3.icons.icon3') ?? $content->section3->icons->icon3}}" id="icon3" name="section3[icons][icon3]" class="icon-picker form-control" type="text" data-iconpicker-input="#icon3">
+                                    <label for="section3_icon_image3">Image</label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input name="section3[images][icon_image3]" type="file"
+                                                   class="custom-file-input" id="section3_icon_image3">
+                                            <label class="custom-file-label" for="section3_icon_image3">Choose
+                                                file</label>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group col-sm-6">
-                                        <label>Icon</label>
-                                        <input value="{{old('section3.icons.icon4') ?? $content->section3->icons->icon4}}"  id="icon4" name="section3[icons][icon4]" class="icon-picker form-control" type="text" data-iconpicker-input="#icon4">
+                                    <label for="section3_icon_image4">Image</label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input name="section3[images][icon_image4]" type="file"
+                                                   class="custom-file-input" id="section2_icon_image4">
+                                            <label class="custom-file-label" for="section2_icon_image4">Choose
+                                                file</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -279,13 +302,11 @@
     </form>
 @endsection
 @push('scripts')
+    <script src="{{asset('js/pages/manageHomepage.js')}}"></script>fontawesome-iconpicker.css
     <!-- Font Awesome Picker -->
-    <script src="{{asset('plugins/fontawesome-iconpicker/iconpicker-1.5.0.js')}}"></script>
-    <script src="{{asset('js/pages/manageHomepage.js')}}"></script>
+    <script src="{{asset('plugins/fontawesome-iconpicker/js/fontawesome-iconpicker.js')}}"></script>
 @endpush
 @push('stylesheets')
     <!-- Font Awesome Picker -->
-    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-iconpicker/iconpicker-1.5.0.css') }}">
-    <!-- Custom fonts for this template -->
-    <link rel="stylesheet" href="{{asset('plugins/simple-line-icons/css/simple-line-icons.css')}}">
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-iconpicker/css/fontawesome-iconpicker.css') }}">
 @endpush

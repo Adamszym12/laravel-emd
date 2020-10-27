@@ -28,6 +28,7 @@ class UpdatePagePostRequest extends FormRequest
             '*.headers.*' => 'required',
             '*.buttons.*' => 'required',
             '*.paragraphs.*' => 'required',
+            '*.icons.*' => 'required',
         ];
     }
 }

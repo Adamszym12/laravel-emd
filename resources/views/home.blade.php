@@ -107,14 +107,14 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="feature-item">
-                                <i class="icon-screen-smartphone text-primary"></i>
+                                <i class="{{$content->section3->icons->icon1}}"></i>
                                 <h3>{{$content->section3->headers->header2}}</h3>
                                 <p class="text-muted">{{$content->section3->paragraphs->paragraph2}}</p>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="feature-item">
-                                <i class="icon-camera text-primary"></i>
+                                <i class="{{$content->section3->icons->icon2}}"></i>
                                 <h3>{{$content->section3->headers->header3}}</h3>
                                 <p class="text-muted">{{$content->section3->paragraphs->paragraph3}}</p>
                             </div>
@@ -123,14 +123,14 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="feature-item">
-                                <i class="icon-present text-primary"></i>
+                                <i class="{{$content->section3->icons->icon3}}"></i>
                                 <h3>{{$content->section3->headers->header4}}</h3>
                                 <p class="text-muted">{{$content->section3->paragraphs->paragraph4}}</p>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="feature-item">
-                                <i class="icon-lock-open text-primary"></i>
+                                <i class="{{$content->section3->icons->icon4}}"></i>
                                 <h3>{{$content->section3->headers->header5}}</h3>
                                 <p class="text-muted">{{$content->section3->paragraphs->paragraph5}}</p>
                             </div>
@@ -196,11 +196,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 <!-- Plugin JavaScript -->
 <script src="{{ asset('plugins/jquery-easing/jquery.easing.min.js') }}"></script>
-
-
 <!-- Custom scripts for this template -->
 <script src="{{ asset('js/new-age.min.js') }}"></script>
 
